@@ -63,7 +63,7 @@ export default class MainLayout extends React.Component {
                             onOpenChange={this.onOpenChange}
                             openKeys={this.state.openKeys}
                             />
-                <Cont />
+                <Cont  />
            </Layout>
        </div>
       

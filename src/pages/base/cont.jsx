@@ -2,6 +2,8 @@ import React  from 'react';
 
 import { Layout, } from 'antd';
 
+import View from '../view/view'
+
 
 const {  Content } = Layout;
 
@@ -12,11 +14,8 @@ export default class Cont extends React.Component {
         
         <Layout className="site-layout">
           
-          <Content style={{ margin: '0 16px' }}>
-    
-            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              Bill is a cat.
-            </div>
+          <Content style={{ margin: '0px 24px' }}>
+              <View />
           </Content>
         </Layout>
 
