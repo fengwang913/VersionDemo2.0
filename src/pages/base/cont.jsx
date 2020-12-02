@@ -5,7 +5,6 @@ import { Layout, } from 'antd';
 
 const {  Content } = Layout;
 
-
 export default class Cont extends React.Component {
 
   render() {

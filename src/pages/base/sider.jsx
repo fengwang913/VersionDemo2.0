@@ -15,13 +15,14 @@ export default class SiderMenu extends React.Component {
   constructor(props){
       super(props)
       this.state ={
-          
+
       }
    
   }
 
   render() {
     const collapsed  = this.props.collapsed;
+    // console.log('this.props.openKeys',this.props.openKeys)
 
     return (
 
@@ -35,7 +36,11 @@ export default class SiderMenu extends React.Component {
           <div className="logo" />
           <Menu  
             defaultSelectedKeys={['1']} 
+            defaultOpenKeys={this.props.openKeys}
             mode="inline"
+            selectedKeys={this.props.leftMenuHighLight()}
+            onClick={this.props._handleClick}
+            onOpenChange = {this.props.onOpenChange}
             >
             <Menu.Item key="1" icon={<PieChartOutlined />}>
               Option 1
