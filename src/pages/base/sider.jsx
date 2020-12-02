@@ -12,29 +12,31 @@ const {  Sider } = Layout;
 const { SubMenu } = Menu;
 
 export default class SiderMenu extends React.Component {
-  state = {
-    collapsed: false,
-  };
-
-  onCollapse = collapsed => {
-    console.log(collapsed);
-    this.setState({ collapsed });
-  };
+  constructor(props){
+      super(props)
+      this.state ={
+          
+      }
+   
+  }
 
   render() {
-    const { collapsed } = this.state;
+    const collapsed  = this.props.collapsed;
+
     return (
 
         <Sider 
+            trigger={null}
             collapsible 
             collapsedWidth = {0}
             collapsed={collapsed} 
-            onCollapse={this.onCollapse} 
-            style={{backgroundColor:'white'}} >
+            style={{backgroundColor:'white'}}
+             >
           <div className="logo" />
           <Menu  
             defaultSelectedKeys={['1']} 
-            mode="inline">
+            mode="inline"
+            >
             <Menu.Item key="1" icon={<PieChartOutlined />}>
               Option 1
             </Menu.Item>
