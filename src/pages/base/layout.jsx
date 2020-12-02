@@ -16,7 +16,7 @@ export default class MainLayout extends React.Component {
         super(props)
         this.state = {
             collapsed: false,
-            openKeys:[],
+            openKeys:['sub1','sub2'],
           };
          
     }

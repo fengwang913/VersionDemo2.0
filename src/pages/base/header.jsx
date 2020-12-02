@@ -15,10 +15,10 @@ export default class Header extends Component{
         return(
             <div style={{display:'flex',height:'7vh', minWidth:'100vw'}}>
                 <div style={ {
-                            width :'250px',
+                            width :'220px',
                             fontSize:'25px',       
                         } }>
-                            <div style={{display:'flex'}}>
+                            <div style={{display:'flex', width :'198px',}}>
                                 <div style={{marginLeft:'20px',
                                             marginTop:'10px'}}>
                                     {React.createElement(MenuOutlined, {

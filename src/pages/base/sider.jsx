@@ -2,10 +2,12 @@ import React  from 'react';
 import { Layout, Menu, } from 'antd';
 import {
   DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
   UserOutlined,
+  VideoCameraOutlined,
+  UploadOutlined,
+  ContainerOutlined,
+  MailOutlined,
+
 } from '@ant-design/icons';
 
 const {  Sider } = Layout;
@@ -42,25 +44,31 @@ export default class SiderMenu extends React.Component {
             onClick={this.props._handleClick}
             onOpenChange = {this.props.onOpenChange}
             >
-            <Menu.Item key="1" icon={<PieChartOutlined />}>
-              Option 1
-            </Menu.Item>
-            <div style={{margin:'20px'}}>这是一个例子</div>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
-              Option 2
-            </Menu.Item>
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
-            </SubMenu>
-            <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
-            </SubMenu>
-            <Menu.Item key="9" icon={<FileOutlined />}>
-              Files
-            </Menu.Item>
+                <Menu.Item key="/" icon={<UserOutlined />} >HOME</Menu.Item>
+                <Menu.Item key="log" icon={<DesktopOutlined />}>
+                    Log
+                </Menu.Item>
+                <SubMenu  key="sub1" icon={<VideoCameraOutlined />} title="ModbusRTU-Master">
+                    <Menu.Item key="Port1">Port1</Menu.Item>
+                    <Menu.Item key="Port2">Port2</Menu.Item>
+                    <Menu.Item key="Port3">Port3</Menu.Item>
+                    <Menu.Item key="Port4">Port4</Menu.Item>
+                    <Menu.Item key="Port5">Port5</Menu.Item>                
+                </SubMenu >
+                <Menu.Item key="ModbusTCP-Master" icon={<MailOutlined />}>
+                    ModbusTCP-Master
+                </Menu.Item>
+                <SubMenu  key="sub2" icon={<UploadOutlined />} title="MQTT">
+                    <Menu.Item key="broker1">Broker1</Menu.Item>
+                    <Menu.Item key="broker2">Broker2</Menu.Item>
+                </SubMenu >
+                <Menu.Item key="devicerealtime" icon={<ContainerOutlined />}>
+                    Device Realtime Status 
+                </Menu.Item>
+                <Menu.Item key="firmware" icon={<MailOutlined />}>Firmware upgrade</Menu.Item>
+                <Menu.Item key="hardwareconfig" icon={<ContainerOutlined />}>
+                Hardware config
+                </Menu.Item>
           </Menu>
         </Sider>
 
