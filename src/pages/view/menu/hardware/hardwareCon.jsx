@@ -371,7 +371,7 @@ export default class TermSer extends Component{
     render(){
 
         return(
-            <div style={{height:'83vh' ,marginTop:'10px'}}>
+            <div style={{height:'83vh' ,marginTop:'20px'}}>
                <div style={{height:'40%' ,backgroundColor:'white'}}>
                    <Draft list={this.state.list} 
                           uploadList={this.uploadList} 

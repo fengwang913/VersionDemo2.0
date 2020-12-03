@@ -3,7 +3,6 @@ import {BrowserRouter as Router ,Route ,Switch  } from 'react-router-dom';
 
 
 import Home from './menu/home/home'
-
 import Log from './menu/log'
 // import ModRTU from './menu/modrtu/modrtu'
 import ModTCP from './menu/modtcp/modtcp'
@@ -40,6 +39,7 @@ export default class View extends Component{
                 <Router>
                     <Switch>
                         <Route path='/' exact component={() =>{  return <Home  />}}></Route>
+
                         <Route path='/log' component={Log}></Route>  
                         <Route path='/firmware'  component={Upgrade}></Route>
                         <Route path='/devicerealtime' component={DevRealS}></Route>
