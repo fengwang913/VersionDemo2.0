@@ -41,6 +41,9 @@ export default class MainLayout extends React.Component {
 
         const { pathname } = history.location
         let selectedKeys = [pathname.replace('/', '')]
+        if (pathname === '/' ) {
+            selectedKeys = ['/']
+          }
         return selectedKeys
       }
       
