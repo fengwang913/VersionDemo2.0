@@ -89,7 +89,7 @@ export default class Log extends Component{
     render(){
 
         return(
-            <div style={{paddingBottom:'20px',marginTop:'10px'}}>
+            <div style={{marginTop:'10px',height:'83vh',marginBottom:'20px'}}>
               <div style={{height:'50px'}}>
                 <div style={{float:'right',zIndex:1}} >
                   <RangePicker style={{zIndex:1}} />
@@ -103,7 +103,7 @@ export default class Log extends Component{
                 </div>
               </div>  
 
-              <div style={{backgroundColor:'white',paddingLeft:'10px'}} >
+              <div style={{backgroundColor:'white',paddingLeft:'10px',marginBottom:'10px'}} >
                 <List
                   itemLayout="horizontal"
                   dataSource={data}

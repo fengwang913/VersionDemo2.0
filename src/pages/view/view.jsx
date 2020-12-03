@@ -6,13 +6,13 @@ import Home from './menu/home/home'
 
 import Log from './menu/log'
 // import ModRTU from './menu/modrtu/modrtu'
-// import ModTCP from './menu/modtcp/modtcp'
+import ModTCP from './menu/modtcp/modtcp'
 // import TermSer from './menu/term-serv'
 import MQTT from './menu/mqtt/mqtt'
 // import Zigbee from './menu/zigbee'
-// import DevRealS from './menu/device-real'
-// import Upgrade from './menu/Fireware/upgrade'
-// import HardwareCon from './menu/hardware/hardwareCon'
+import DevRealS from './menu/device-real'
+import Upgrade from './menu/Fireware/upgrade'
+import HardwareCon from './menu/hardware/hardwareCon'
 
 import Broker1 from './menu/mqtt/broker/info1'
 import Broker2 from './menu/mqtt/broker/info2'
@@ -40,14 +40,18 @@ export default class View extends Component{
                 <Router>
                     <Switch>
                         <Route path='/' exact component={() =>{  return <Home  />}}></Route>
-                        <Route path='/log' component={Log}></Route>
-                        {/* <Route path='/ModbusRTU-master'  component={ModRTU}></Route>
+                        <Route path='/log' component={Log}></Route>  
+                        <Route path='/firmware'  component={Upgrade}></Route>
+                        <Route path='/devicerealtime' component={DevRealS}></Route>
                         <Route path='/ModbusTCP-master' component={ModTCP}></Route>
+
+                        <Route path='/hardwareconfig' component={HardwareCon}></Route>
+                        {/* <Route path='/ModbusRTU-master'  component={ModRTU}></Route>
                         <Route path='/termialserver'  component={TermSer}></Route> */}
                         <Route path='/mqtt' component={MQTT}></Route>
                         {/* <Route path='/zigbee' component={Zigbee}></Route>
-                        <Route path='/devicerealtime' component={DevRealS}></Route>
-                        <Route path='/firmware'  component={Upgrade}></Route>
+                        
+                      
                         <Route path='/hardwareconfig' component={HardwareCon}></Route> */}
                         <Route path='/broker1' component={Broker1}></Route>
                         <Route path='/broker2' component={Broker2}></Route>
