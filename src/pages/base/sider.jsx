@@ -32,7 +32,12 @@ const Demo = (props) => {
           onClick={props.props._handleClick}
           onOpenChange = {props.props.onOpenChange}
         >
-                <div style={{height:'16px',marginLeft:'6px',paddingTop:'6px',color:'#C0C0C0',marginTop:'4px'}}>Configuration</div>
+                <div 
+                    style={{height:'16px',
+                            marginLeft:'6px',
+                            paddingTop:'6px',
+                            color:'#C0C0C0',
+                            marginTop:'4px',}}>Configuration</div>
 
                 <SubMenu  key="sub1" icon={<DesktopOutlined />} title="Communication">
                     <Menu.Item key="/">Port</Menu.Item>
@@ -45,7 +50,11 @@ const Demo = (props) => {
                 <Menu.Item key="hardwareconfig" icon={<VideoCameraOutlined />}>
                     Hardware config
                 </Menu.Item>
-                <div style={{height:'16px',marginLeft:'6px',paddingTop:'6px',color:'#C0C0C0'}}>Information</div>
+                <div 
+                    style={{height:'16px',
+                        marginLeft:'6px',
+                        paddingTop:'6px',
+                        color:'#C0C0C0'}}>Information</div>
                 <Menu.Item key="log" icon={<UploadOutlined />}>
                     Log
                 </Menu.Item>
@@ -61,7 +70,12 @@ const Demo = (props) => {
                 <Menu.Item key="communication" icon={<LinkOutlined />}>
                     Communication Datagram
                 </Menu.Item>
-                <div style={{height:'16px',marginLeft:'6px',paddingTop:'6px',color:'#C0C0C0'}}>Upgrade</div>
+
+                <div 
+                    style={{height:'16px',
+                        marginLeft:'6px',
+                        paddingTop:'6px',
+                        color:'#C0C0C0'}}>Upgrade</div>
                 <Menu.Item key="firmware" icon={<MailOutlined />}>Firmware upgrade</Menu.Item>
                 <Menu.Item key="project" icon={<UserOutlined />}>Project</Menu.Item>
           

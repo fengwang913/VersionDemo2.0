@@ -16,12 +16,12 @@ export default class Header extends Component{
 
     render(){
         return(
-            <div style={{display:'flex',height:'8vh', Width:'100vw'}}>
+            <div style={{display:'flex',height:'72px', Width:'100vw'}}>
                 <div style={ {
                             width :'250px',
                             fontSize:'25px',       
                         } }>
-                            <div style={{display:'flex', width :'230px',}}>
+                            <div style={{display:'flex', width :'250px',}}>
                                 <div style={{paddingLeft:'20px',
                                             marginTop:'10px'}}>
                                     {React.createElement(MenuOutlined, {
