@@ -1,6 +1,43 @@
+@import '~antd/dist/antd.css';
 
 
-.sty1{
-   background-color:'red'
+.ant-layout-sider{
+   background-color: white;
+   width: 250px !important;
+   min-width: 250px !important;
+   max-width: 250px !important;
+   flex:0 0 250px !important;
+ 
+}
+
+.ant-layout-sider-collapsed {
+   width: 0px !important;
+   min-width: 0px !important;
+   max-width: 0px !important;
+   flex:0 0 0px !important;
+
+}
+
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+   background-color: #043D5D;
+}
+
+.ant-menu-item-selected{
+   color: white;
+}
+
+
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after{
+   border-right:0px;
+
+   
+}
+
+.ant-menu-item.ant-menu-item-only-child{
+
+   padding-left: 24px  !important;
+   width: 203px;
+   margin-left: 48px;
  
 }

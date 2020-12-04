@@ -5,7 +5,7 @@ import {
     UserOutlined,
     VideoCameraOutlined,
     UploadOutlined,
-    ContainerOutlined,
+    // ContainerOutlined,
     MailOutlined,
     CalendarOutlined,
     AppstoreOutlined,
@@ -24,7 +24,7 @@ const Demo = (props) => {
     return (
       <>
         <Menu
-          style={{ width: 200 }}
+          style={{ width: 250 }}
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1','sub2']}
           mode="inline"
@@ -89,13 +89,10 @@ export default class SiderMenu extends React.Component {
             collapsible 
             collapsedWidth = {0}
             collapsed={collapsed} 
-            style={{backgroundColor:'white',width:'300px'}}
-            className={'sty1'}
              >
           <div className="logo" />
           <Demo props={this.props}/>
          </Sider>
-
     );
   }
 }
