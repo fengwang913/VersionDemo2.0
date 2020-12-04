@@ -11,11 +11,10 @@ function callback(key) {
 }
 
 const Broker = () => (
-  <Tabs defaultActiveKey="1" onChange={callback}>
+  <Tabs defaultActiveKey="1" onChange={callback}   style={{marginTop:'20px'}}>
     <TabPane tab="发布参数" key="1">
       <Publish />
     </TabPane>
-
     <TabPane tab="订阅参数" key="2">
       <Subscript />
     </TabPane>

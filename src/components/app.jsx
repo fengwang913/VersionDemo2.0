@@ -1,7 +1,7 @@
 import React,{ Component }  from 'react';
 
-// import MainLayout from '../pages/base/layout'
-import Login from '../pages/view/login'
+import MainLayout from '../pages/base/layout'
+// import Login from '../pages/view/login'
 
 // import Header from '../pages/base/header'
 // import SiderDemo from '../pages/base/layout'
@@ -15,8 +15,8 @@ export default class App extends Component{
         return(
             <div id='app'>
                 {/* <Header /> */}
-                {/* <MainLayout /> */}
-                <Login />
+                <MainLayout />
+                {/* <Login /> */}
             </div>
         )
     }
