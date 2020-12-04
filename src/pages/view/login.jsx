@@ -1,84 +1,58 @@
 import { Form, Input, Button, Checkbox } from 'antd';
-const layout = {
-  labelCol: {
-    span: 8,
-  },
-  wrapperCol: {
-    span: 16,
-  },
-};
-const tailLayout = {
-  wrapperCol: {
-    offset: 8,
-    span: 16,
-  },
-};
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+
+// import logo from '../../assets/img/logo.jpg'
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
-  };
-
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
+    const onFinish = values => {
+      console.log('Received values of form: ', values);
+    };
+  
 
   return (
       <div style={{height:'100vh'}}>
+          <div style={{ height:'50vh',backgroundColor:'#043D5D'}}>
+              <div style={{color:'white', fontSize:'42px',paddingTop:'30vh',paddingLeft:'30vw'}}>
+                    北京龙鼎源科技股份有限公司
+              </div>
+          </div>
+   
         <Form
-                {...layout}
-                name="basic"
-                style={{    width:'400px',
-                            height:'300px',
-                            border:'1px solid black',
-                            paddingTop:'80px',
-                            paddingRight:'60px',
-                            position:'absolute',
-                            top:'250px',
-                            left:'440px'}}
-                initialValues={{
-                    remember: true,
-                }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                >
-
-            <Form.Item
-                label="Username"
-                name="username"
-                rules={[
-                {
-                    required: true,
-                    message: 'Please input your username!',
-                },
-                ]}
+            name="normal_login"
+            className="login-form"
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+            style={{    
+                width:'300px',
+                height:'300px',
+                paddingTop:'60px',
+                marginLeft:'38vw'
+        }}
             >
-                <Input />
-            </Form.Item>
+      <Form.Item
+        name="username"
+        rules={[{ required: true, message: '请输入用户名!' }]}
+      >
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+      </Form.Item>
+      <Form.Item
+        name="password"
+        rules={[{ required: true, message: '请输入密码!' }]}
+      >
+        <Input.Password
+          prefix={<LockOutlined className="site-form-item-icon" />}
+          type="password"
+          placeholder="Password"
+        />
+      </Form.Item>
 
-            <Form.Item
-                label="Password"
-                name="password"
-                rules={[
-                {
-                    required: true,
-                    message: 'Please input your password!',
-                },
-                ]}
-            >
-                <Input.Password />
-            </Form.Item>
-
-            <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-                <Checkbox>Remember me</Checkbox>
-            </Form.Item>
-
-            <Form.Item {...tailLayout}>
-            <Button type="primary" htmlType="submit">
-            Submit
-            </Button>
-        </Form.Item>
-        </Form>
+      <Form.Item>
+        <Button type="primary" htmlType="submit" className="login-form-button" style={{width:'100%'}}>
+          登录
+        </Button>
+      </Form.Item>
+    </Form>
+        
 
       </div>
   
