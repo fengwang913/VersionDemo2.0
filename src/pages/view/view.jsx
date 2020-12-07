@@ -2,6 +2,14 @@ import React,{ Component }  from 'react';
 import {BrowserRouter as Router ,Route ,Switch  } from 'react-router-dom';
 
 
+
+// import MainLayout from '../base/layout'
+// import Login from '../view/login'
+
+
+
+
+
 import Home from './menu/home/home'
 import Log from './menu/log'
 import ModRTU from './menu/modrtu/modrtu'
@@ -30,37 +38,25 @@ export default class View extends Component{
             <div id='view'>
                 <Router>
                     <Switch>
-                        <Route path='/' exact component={() =>{  return <Home  />}}></Route>
 
-                        <Route path='/log' component={Log}></Route>  
-                        <Route path='/firmware'  component={Upgrade}></Route>
-                        <Route path='/devicerealtime' component={DevRealS}></Route>
-                        <Route path='/ModbusTCP-master' component={ModTCP}></Route>
+                        <Route path='/view' exact component={() =>{  return <Home  />}}></Route>
+                        <Route path='/view/port' component={() =>{  return <Home  />}}></Route>
 
-                        <Route path='/hardwareconfig' component={HardwareCon}></Route>
-                        <Route path='/ModbusRTU-master'  component={ModRTU}></Route>
-                        <Route path='/mqtt'  component={MQTT}></Route>
+                        <Route path='/view/log' component={Log}></Route>  
+                        <Route path='/view/firmware'  component={Upgrade}></Route>
+                        <Route path='/view/devicerealtime' component={DevRealS}></Route>
+                        <Route path='/view/ModbusTCP-master' component={ModTCP}></Route>
 
-                        <Route path='/modbusAdress'  component={ModbusAdress}></Route>
-                        <Route path='/communication'  component={Communication}></Route>
-                        <Route path='/project'  component={Project}></Route>
-                        <Route path='/proVariable'  component={ProVariable}></Route>
+                        <Route path='/view/hardwareconfig' component={HardwareCon}></Route>
+                        <Route path='/view/ModbusRTU-master'  component={ModRTU}></Route>
+                        <Route path='/view/mqtt'  component={MQTT}></Route>
 
+                        <Route path='/view/modbusAdress'  component={ModbusAdress}></Route>
+                        <Route path='/view/communication'  component={Communication}></Route>
+                        <Route path='/view/project'  component={Project}></Route>
+                        <Route path='/view/proVariable'  component={ProVariable}></Route>
 
-                         {/* <Route path='/termialserver'  component={TermSer}></Route> */}
-                        {/* <Route path='/zigbee' component={Zigbee}></Route>
-                        
-                      
-                        <Route path='/hardwareconfig' component={HardwareCon}></Route> */}
-                        {/* <Route path='/broker1' component={Broker1}></Route>
-                        <Route path='/broker2' component={Broker2}></Route> */}
-                        {/*<Route path='/Port1' component={Port01}></Route>
-                        <Route path='/Port2' component={Port02}></Route>
-                        <Route path='/Port3' component={Port03}></Route>
-                        <Route path='/Port4' component={Port04}></Route>
-                        <Route path='/Port5' component={Port05}></Route> */}
-                        
-                        </Switch>
+                    </Switch>
                 </Router>  
             </div>
         )

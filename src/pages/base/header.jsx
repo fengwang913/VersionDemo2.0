@@ -29,10 +29,10 @@ export default class Header extends Component{
                                             onClick: this.props.toggle,
                                     })}
                                 </div>
-                                <div style={{paddingLeft:'10px',
+                                <div style={{paddingLeft:'20px',
                                         marginTop:'10px',
                                         color:'#043D5D'}}> 
-                                    配置信息
+                                    200N
                                 </div>
 
                             </div>
@@ -46,12 +46,12 @@ export default class Header extends Component{
                                 marginTop:'6px',
                                 fontSize:'20px',
                                 color:'white',}}>
-                            Anybus Communicator
+                            设备ID:123456
                         </div>
                         <div style={{paddingLeft:'14px',
                                 fontSize:'12px',
                                 color:'#C0C0C0',}} >
-                            Article Number: ABC3007 Version: 1.1.1 Serial Number: A0477E0C GUI Version: 1.01.1
+                            设备类型：Version: 1.1.1 Serial Number: A0477E0C GUI Version: 1.01.1
                         </div>
                         
                     

@@ -25,7 +25,7 @@ const Demo = (props) => {
       <>
         <Menu
           style={{ width: 250 }}
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={['port']}
           defaultOpenKeys={['sub1','sub2']}
           mode="inline"
           selectedKeys={props.props.leftMenuHighLight()}
@@ -40,14 +40,14 @@ const Demo = (props) => {
                             marginTop:'4px',}}>Configuration</div>
 
                 <SubMenu  key="sub1" icon={<DesktopOutlined />} title="Communication">
-                    <Menu.Item key="/">Port</Menu.Item>
+                    <Menu.Item key="view/port">Port</Menu.Item>
                         <SubMenu  key="sub2"  title="Protocol">
-                            <Menu.Item key="ModbusRTU-master">ModbusRTU-Master</Menu.Item>
-                            <Menu.Item key="ModbusTCP-Master">ModbusTCP-Master</Menu.Item>                
-                            <Menu.Item key="mqtt">MQTT</Menu.Item>                
+                            <Menu.Item key="view/ModbusRTU-master">ModbusRTU-Master</Menu.Item>
+                            <Menu.Item key="view/ModbusTCP-Master">ModbusTCP-Client</Menu.Item>                
+                            <Menu.Item key="view/mqtt">MQTT</Menu.Item>                
                         </SubMenu >                
                 </SubMenu >
-                <Menu.Item key="hardwareconfig" icon={<VideoCameraOutlined />}>
+                <Menu.Item key="view/hardwareconfig" icon={<VideoCameraOutlined />}>
                     Hardware config
                 </Menu.Item>
                 <div 
@@ -55,19 +55,19 @@ const Demo = (props) => {
                         marginLeft:'6px',
                         paddingTop:'6px',
                         color:'#C0C0C0'}}>Information</div>
-                <Menu.Item key="log" icon={<UploadOutlined />}>
+                <Menu.Item key="view/log" icon={<UploadOutlined />}>
                     Log
                 </Menu.Item>
-                <Menu.Item key="devicerealtime" icon={<CalendarOutlined />}>
+                <Menu.Item key="view/devicerealtime" icon={<CalendarOutlined />}>
                     Device Status 
                 </Menu.Item>
-                <Menu.Item key="proVariable" icon={<AppstoreOutlined />}>
+                <Menu.Item key="view/proVariable" icon={<AppstoreOutlined />}>
                     Project Variables
                 </Menu.Item>
-                <Menu.Item key="modbusAdress" icon={<SettingOutlined />}>
+                <Menu.Item key="view/modbusAdress" icon={<SettingOutlined />}>
                     Modbus Address Values
                 </Menu.Item>
-                <Menu.Item key="communication" icon={<LinkOutlined />}>
+                <Menu.Item key="view/communication" icon={<LinkOutlined />}>
                     Communication Datagram
                 </Menu.Item>
 
@@ -76,8 +76,8 @@ const Demo = (props) => {
                         marginLeft:'6px',
                         paddingTop:'6px',
                         color:'#C0C0C0'}}>Upgrade</div>
-                <Menu.Item key="firmware" icon={<MailOutlined />}>Firmware upgrade</Menu.Item>
-                <Menu.Item key="project" icon={<UserOutlined />}>Project</Menu.Item>
+                <Menu.Item key="view/firmware" icon={<MailOutlined />}>Firmware upgrade</Menu.Item>
+                <Menu.Item key="view/project" icon={<UserOutlined />}>Project</Menu.Item>
           
         </Menu>
       </>
