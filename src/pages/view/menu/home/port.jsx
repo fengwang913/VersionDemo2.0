@@ -163,7 +163,7 @@ const EditableTable = () => {
     {
         title: '串口',
         dataIndex: 'port',
-        width: '10%',
+        width: '8%',
         editable: false,
       },
       {
