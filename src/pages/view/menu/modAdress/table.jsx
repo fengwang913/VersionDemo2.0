@@ -1,8 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Table, Input, Button, Popconfirm, Form ,Select , Drawer  } from 'antd';
 import SortTable from './sortTab'
-// import DemoTable from './demo'
-
 
 
 const EditableContext = React.createContext();
@@ -341,7 +339,7 @@ export default class ModbusTab extends React.Component {
           style={{paddingBottom:'20px'}}
         />
          <Drawer
-          title="Multi-level drawer"
+          title="Modbus Address Values"
           width={1000}
           closable={false}
           onClose={this.onClose}

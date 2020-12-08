@@ -22,12 +22,8 @@ export default class MainView extends Component{
                 <Router>
                     <Switch>
                         
-                            {/* <Route  path="/login" component={Login}/> */}
-                            <Route path='/login' exact component={() =>{  return <Login  />}}></Route>
+                            <Route path='/' exact component={() =>{  return <Login  />}}></Route>
                             <Route path='/view' component={() =>{  return <MainLayout  />}}></Route>
-
-                           
-
                         </Switch>
                 </Router>  
             </div>
