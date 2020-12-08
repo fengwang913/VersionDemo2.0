@@ -1,7 +1,14 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
-import { Table, Input, Button, Popconfirm, Form ,Select  } from 'antd';
+import { Table, Input, Button, Popconfirm, Form ,Select , Drawer  } from 'antd';
+import SortTable from './sortTab'
+// import DemoTable from './demo'
+
+
+
 const EditableContext = React.createContext();
 const { Option } = Select;
+
+
 const EditableRow = ({ index, ...props }) => {
   const [form] = Form.useForm();
   return (
@@ -30,7 +37,6 @@ const EditableCell = ({
 
   useEffect(() => {
     if (editing) {
-      console.log('dataIndex',dataIndex)
       if(dataIndex === 'zoneType'){
           zoneSelectRef.current.focus();
       }
@@ -68,7 +74,6 @@ const EditableCell = ({
   let childNode = children;
 
   if (editable) {
-      console.log('dataIndex dataIndex',dataIndex,dataIndex === 'zoneType')
     childNode = editing ? (
         (dataIndex === 'zoneType'?(
             <Form.Item
@@ -203,6 +208,7 @@ export default class ModbusTab extends React.Component {
           length: '12',
           dataType:'int',
           byte:'12',
+          index: 0,
 
         },
         {
@@ -212,6 +218,7 @@ export default class ModbusTab extends React.Component {
           length: '10',
           dataType:'float',
           byte:'21',
+          index: 1,
         },
         {
             key: '2',
@@ -220,6 +227,7 @@ export default class ModbusTab extends React.Component {
             length: '8',
             dataType:'short',
             byte:'1234',
+            index: 2,
           },
           {
             key: '3',
@@ -228,9 +236,11 @@ export default class ModbusTab extends React.Component {
             length: '9',
             dataType:'double',
             byte:'4321',
+            index: 3,
           },
       ],
-      count: 2,
+      count: 4,
+      visible: false
     };
   }
 
@@ -249,6 +259,7 @@ export default class ModbusTab extends React.Component {
       length:'8',
       dataType:'byte',
       byte:'12',
+      index: count,
     };
     this.setState({
       dataSource: [...dataSource, newData],
@@ -265,11 +276,28 @@ export default class ModbusTab extends React.Component {
     });
   };
 
+
+  //drawer
+  showDrawer = () => {
+    this.setState({
+      visible: true,
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      visible: false,
+    });
+  };
+ 
+
   render() {
     const { dataSource } = this.state;
+    console.log('this.state.visible',this.state.visible)
+
     const components = {
       body: {
-        row: EditableRow,
+        row: EditableRow ,
         cell: EditableCell,
       },
     };
@@ -300,6 +328,9 @@ export default class ModbusTab extends React.Component {
         >
           添加
         </Button>
+        <Button type="primary" onClick={this.showDrawer} style={{marginLeft:'10px'}}>
+            排序
+          </Button>
         <Table
           components={components}
           rowClassName={() => 'editable-row'}
@@ -308,11 +339,20 @@ export default class ModbusTab extends React.Component {
           columns={columns}
           pagination={false}
           style={{paddingBottom:'20px'}}
- 
         />
+         <Drawer
+          title="Multi-level drawer"
+          width={1000}
+          closable={false}
+          onClose={this.onClose}
+          visible={this.state.visible}
+        >
+            <SortTable data={this.state.dataSource} />
+        </Drawer>
       </div>
     );
   }
 }
+
 
 
