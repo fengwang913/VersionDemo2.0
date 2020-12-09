@@ -23,6 +23,8 @@ import Communication from './menu/communication/comm'
 import Project from './menu/project/proj'
 import ProVariable from './menu/ProjectVari/project'
 
+import Ntp from './menu/ntp/ntp'
+
 
 
 
@@ -39,6 +41,7 @@ export default class View extends Component{
                 <Router>
                     <Switch>
 
+                        <Route path='/view/ntp'  component={Ntp}></Route>
                         <Route path='/view' exact component={() =>{  return <Home  />}}></Route>
                         <Route path='/view/port' component={() =>{  return <Home  />}}></Route>
 

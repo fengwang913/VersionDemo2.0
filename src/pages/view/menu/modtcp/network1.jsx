@@ -17,8 +17,10 @@ export default class Network01 extends Component{
         Addre:'24',
         mappinAddre:'1',
         number:'19200',
-        timeout:'320',
-        netport:'Port1'
+        timeout:'320',  
+        statusAddress:'23',
+        ethernet:'Port1',
+        circle:'1',
       
     },{
       key:'02',
@@ -31,7 +33,9 @@ export default class Network01 extends Component{
       mappinAddre:'1',
       number:'19200',
       timeout:'320',
-      netport:'Port2'
+      statusAddress:'22',
+      ethernet:'Port2',
+      circle:'1',
   },{
     key:'023',
     index:'3',
@@ -43,7 +47,9 @@ export default class Network01 extends Component{
     mappinAddre:'1',
     number:'19200',
     timeout:'320',
-    netport:'Port1'
+    statusAddress:'12',
+    ethernet:'Port2',
+    circle:'1',
 },
 
       ]

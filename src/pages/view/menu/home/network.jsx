@@ -1,9 +1,9 @@
 import React,{ Component ,useState}  from 'react';
 import { Table, Popconfirm, Form ,Button } from 'antd';
-import { Select } from 'antd';
+import { Input  } from 'antd';
 
 
-const { Option } = Select;
+// const { Option } = Select;
 //原始数据而已
   const originData = [];
   originData.push({
@@ -12,12 +12,15 @@ const { Option } = Select;
       IP:'255.255.255.255',
       Gateway:'2',
       Mask:'1',
+      dns:'255.255.255.255',
   },{
     key:'02',
     ID:'2',
     IP:'255.255.255.255',
     Gateway:'2',
     Mask:'1',
+    dns:'255.255.255.255',
+
 },
 )
 
@@ -35,10 +38,7 @@ const EditableCell = ({
   ...restProps
 }) => {
  
-  const inputNode =  <Select style={{ width: 80 }}>
-                                                <Option value="19200"> 19200</Option>
-                                                <Option value="115200"> 115200</Option>
-                     </Select>
+  const inputNode =  <Input  />
                    
 
 
@@ -116,24 +116,32 @@ const EditableTable = () => {
     {
         title: '网口',
         dataIndex: 'ID',
-        width: '20%',
+        width: '15%',
         editable: false,
       },
     {
       title: 'IP',
       dataIndex: 'IP',
       width: '20%',
-      editable: false,
+      editable: true,
+
     },
     {
       title: 'Gateway',
       dataIndex: 'Gateway',
-      width: '20%',
-      editable: false,
+      width: '15%',
+      editable: true,
+
     },
     {
         title: 'Mask',
         dataIndex: 'Mask',
+        width: '15%',
+        editable: true,
+      },
+      {
+        title: 'DNS服务器地址',
+        dataIndex: 'dns',
         width: '20%',
         editable: true,
       },

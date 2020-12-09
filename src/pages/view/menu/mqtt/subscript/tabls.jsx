@@ -29,7 +29,8 @@ const EditableCell = ({
                                             <Option value="float">float</Option>
                                             <Option value="double">double</Option>
                                             <Option value="binary">binary</Option>
-                                        </Select> :null))))
+                                        </Select> :(
+                  inputType === 'status' ?<Input /> :null)))))
                         )
 
   return (
@@ -74,6 +75,7 @@ const SubscriptTable = (props) => {
       addr:'',
       size:'',
       type:'',
+      status:'',
       ...record,
     });
     setEditingKey(record.key);
@@ -110,7 +112,7 @@ const SubscriptTable = (props) => {
     {
       title: '序号',
       dataIndex: 'index',
-      width: '10%',
+      width: '8%',
       editable: false,
     },
       {
@@ -138,9 +140,15 @@ const SubscriptTable = (props) => {
         editable: true,
       },
       {
+        title: 'Status Address',
+        dataIndex: 'status',
+        width: '10%',
+        editable: true,
+      },
+      {
         title: '内容类型',
         dataIndex: 'type',
-        width: '15%',
+        width: '10%',
         editable: true,
       },
     {

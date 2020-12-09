@@ -38,7 +38,10 @@ const EditableCell = ({
                       inputType === 'TLS' ? <Select style={{ width: 90 }}>
                                                 <Option value="使能"> 使能</Option>
                                                 <Option value="不使能">不使能</Option>
-                                            </Select> :null
+                                            </Select> :( 
+                      inputType === 'Connection' ? <Input 
+                                                style={{ width: 60 }} /> :
+                                              null)
                                     ))))))))
                    
 
@@ -70,13 +73,9 @@ const EditableCell = ({
 
 //
 const BrokerTab = (props) => {
-    console.log('我的props是多少呢',props)
   const [form] = Form.useForm();
   const [data, setData] = useState(props.originData);
   const [editingKey, setEditingKey] = useState('');
-  console.log('我现在是多少呢',data)
-  
-
   const isEditing = (record) => record.key === editingKey;
 
   const edit = (record) => {
@@ -89,6 +88,7 @@ const BrokerTab = (props) => {
         UserName:'',
         UserPassword:'',
         TLS:'',
+        Connection:'',
       ...record,
     });
     setEditingKey(record.key);
@@ -167,6 +167,12 @@ const BrokerTab = (props) => {
       {
         title: 'TLS 使能',
         dataIndex: 'TLS',
+        width: '10%',
+        editable: true,
+      },
+      {
+        title: 'Connection Status Address',
+        dataIndex: 'Connection',
         width: '10%',
         editable: true,
       },

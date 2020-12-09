@@ -19,7 +19,8 @@ export default class Broker2 extends Component{
                 KeepAliveInterval:'210',
                 UserName:'1111',
                 UserPassword:'12345677',
-                TLS:'不使能'
+                TLS:'不使能',
+                Connection:'101'
             }]
 
         }}

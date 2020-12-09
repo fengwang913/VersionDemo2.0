@@ -1,5 +1,5 @@
 import React,{ useState,useEffect}  from 'react';
-import { Table,InputNumber, Popconfirm, Form, Button } from 'antd';
+import { Table,Input, Popconfirm, Form, Button } from 'antd';
 import { Select } from 'antd';
 
 
@@ -18,17 +18,12 @@ const EditableCell = ({
   ...restProps
 }) => {
  
-  const inputNode =inputType === 'funcCode' ? <Select style={{ width: 180 }}>
-                                                  <Option value="Read Coils"> Read Coils</Option>
-                                                  <Option value="Read Discreate Inputs"> Read Discreate Inputs</Option>
-                                                  <Option value="Read Holding Registers"> Read Holding Registers</Option>
-                                                  <Option value="Read Input Registers"> Read Input Registers</Option>
-                                                  <Option value="Write Coil"> Write Coil</Option>
-                                                  <Option value="Write Register"> Write Register</Option>
-                                                  <Option value="Write Coils"> Write Coils</Option>
-                                                  <Option value="Write Registers"> Write Registers</Option>
-                                              </Select> 
-                                              :<InputNumber />;
+  const inputNode =inputType === 'SOE' ? <Select style={{ width: 100 }}>
+                                              <Option value="Read Coils">超上限</Option>
+                                              <Option value="Read Discreate Inputs"> 超下限</Option>
+                                              <Option value="Read Holding Registers">恢复</Option>
+                                          </Select> 
+                                            :<Input />;
 
   return (
     <td {...restProps}>
@@ -76,6 +71,7 @@ const AiTable = (props) => {
         SOERange:'',
         SOEUpper:'',
         SOELower:'',
+        range:'',
       ...record,
     });
     setEditingKey(record.key);
@@ -131,7 +127,7 @@ const AiTable = (props) => {
       {
         title: 'SOE滞回区间',
         dataIndex: 'SOERange',
-        width: '15%',
+        width: '12%',
         editable: true,
       },
       {
@@ -143,6 +139,12 @@ const AiTable = (props) => {
       {
         title: 'SOE下限',
         dataIndex: 'SOELower',
+        width: '10%',
+        editable: true,
+      },
+      {
+        title: '量程',
+        dataIndex: 'range',
         width: '10%',
         editable: true,
       },

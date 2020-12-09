@@ -12,7 +12,7 @@ export default class ModRTU extends Component{
     render(){
 
         return(
-            <div style={{Height:'50vh'}} >
+            <div style={{height:'83vh'}} >
                 <TabSelect />
             </div>
         )

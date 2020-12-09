@@ -21,7 +21,9 @@ const EditableCell = ({
   const inputNode =(inputType === 'topic' ?<Input /> :(
                     inputType === 'zone' ? <InputNumber /> :(
                     inputType === 'addr'?<InputNumber /> :(
-                    inputType === 'size'?<InputNumber /> :null)))
+                    inputType === 'size'?<InputNumber /> :(
+                    inputType === 'status'?<InputNumber /> : 
+                      null))))
                         )
 
   return (
@@ -65,6 +67,7 @@ const PublishTable = (props) => {
       zone:'',
       addr:'',
       size:'',
+      status:'',
       ...record,
     });
     setEditingKey(record.key);
@@ -107,7 +110,7 @@ const PublishTable = (props) => {
       {
         title: 'topic',
         dataIndex: 'topic',
-        width: '15%',
+        width: '10%',
         editable: true,
       },
       {
@@ -119,13 +122,19 @@ const PublishTable = (props) => {
       {
         title: 'modbus address',
         dataIndex: 'addr',
-        width: '20%',
+        width: '12%',
         editable: true,
       },
       {
         title: 'size',
         dataIndex: 'size',
-        width: '15%',
+        width: '10%',
+        editable: true,
+      },
+      {
+        title: 'Status Address',
+        dataIndex: 'status',
+        width: '12%',
         editable: true,
       },
     {

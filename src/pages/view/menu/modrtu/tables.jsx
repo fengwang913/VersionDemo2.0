@@ -18,7 +18,7 @@ const EditableCell = ({
   ...restProps
 }) => {
  
-  const inputNode =inputType === 'funcCode' ? <Select style={{ width: 180 }}>
+  const inputNode =inputType === 'funcCode' ? <Select style={{ width: 160 }}>
                                                   <Option value="Read Coils"> Read Coils</Option>
                                                   <Option value="Read Discreate Inputs"> Read Discreate Inputs</Option>
                                                   <Option value="Read Holding Registers"> Read Holding Registers</Option>
@@ -28,7 +28,7 @@ const EditableCell = ({
                                                   <Option value="Write Coils"> Write Coils</Option>
                                                   <Option value="Write Registers"> Write Registers</Option>
                                               </Select> 
-                                              :<InputNumber />;
+                                              :<InputNumber style={{ width: 50 }}/>;
 
   return (
     <td {...restProps}>
@@ -71,10 +71,13 @@ const EditableTable = (props) => {
   const edit = (record) => {
     form.setFieldsValue({
       index:'',
+      slaveId:'',
       funcCode:'',
       Addre:'',
       mappinAddre:'',
+      statusAddre:'',
       number:'',
+      circle:'',
       ...record,
     });
     setEditingKey(record.key);
@@ -111,32 +114,50 @@ const EditableTable = (props) => {
     {
       title: '序号',
       dataIndex: 'index',
-      width: '10%',
+      width: '5%',
       editable: false,
+    },
+    {
+      title: '从站地址',
+      dataIndex: 'slaveId',
+      width: '10%',
+      editable: true,
     },
     {
       title: '功能码',
       dataIndex: 'funcCode',
-      width: '25%',
+      width: '19%',
       editable: true,
     },
     
       {
         title: '地址',
         dataIndex: 'Addre',
-        width: '15%',
+        width: '10%',
         editable: true,
       },
       {
         title: '映射地址',
         dataIndex: 'mappinAddre',
-        width: '15%',
+        width: '10%',
+        editable: true,
+      },
+      {
+        title: '状态地址',
+        dataIndex: 'statusAddre',
+        width: '10%',
         editable: true,
       },
       {
         title: '数量',
         dataIndex: 'number',
-        width: '15%',
+        width: '9%',
+        editable: true,
+      }, 
+      {
+        title: '周期',
+        dataIndex: 'circle',
+        width: '7%',
         editable: true,
       },
     {
@@ -209,6 +230,7 @@ const EditableTable = (props) => {
         columns={mergedColumns}
         rowClassName="editable-row"
         pagination={false}
+        style={{paddingBottom:'20px'}}
       />
     </Form>
   );

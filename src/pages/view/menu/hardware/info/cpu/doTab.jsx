@@ -77,9 +77,8 @@ const DoTable = (props) => {
         type:'',
         time:'',
         SOE:'',
-        // SOERange:'',
-        // SOEUpper:'',
-        // SOELower:'',
+        fault:'',
+
       ...record,
     });
     setEditingKey(record.key);
@@ -122,19 +121,25 @@ const DoTable = (props) => {
     {
         title: '通道类型',
         dataIndex:'type',
-        width: '20%',
+        width: '15%',
         editable: true,
       },
       {
         title: '滤波时间',
         dataIndex:'time',
-        width: '20%',
+        width: '15%',
         editable: true,
       },
     {
       title: 'SOE事件',
       dataIndex:'SOE',
-      width: '20%',
+      width: '15%',
+      editable: true,
+    },
+    {
+      title: '故障预置',
+      dataIndex:'fault',
+      width: '15%',
       editable: true,
     },
     

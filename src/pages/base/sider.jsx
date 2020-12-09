@@ -39,6 +39,9 @@ const Demo = (props) => {
                             color:'#C0C0C0',
                             marginTop:'4px',}}>Configuration</div>
 
+                <Menu.Item key="view/ntp" icon={<VideoCameraOutlined />}>
+                    NTP
+                </Menu.Item>
                 <SubMenu  key="sub1" icon={<DesktopOutlined />} title="Communication">
                     <Menu.Item key="view/port">Port</Menu.Item>
                         <SubMenu  key="sub2"  title="Protocol">

@@ -42,7 +42,7 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
                 },{
                     key:'2',
                     index:2,
@@ -150,7 +150,8 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    fault:'12',
                 },{
                     key:'14',
                     index:2,
@@ -159,7 +160,8 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    fault:'15',
                 },{
                     key:'15',
                     index:3,
@@ -168,7 +170,8 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    fault:'15',
                 },{
                     key:'16',
                     index:4,
@@ -177,7 +180,8 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    fault:'16',
                 },{
                     key:'17',
                     index:1,
@@ -186,7 +190,8 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    range:'24',
                 },{
                     key:'18',
                     index:2,
@@ -195,7 +200,9 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    range:'21',
+
                 },{
                     key:'19',
                     index:3,
@@ -204,7 +211,9 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    range:'35',
+
                 },{
                     key:'20',
                     index:4,
@@ -213,7 +222,9 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    range:'31',
+
                 },{
                     key:'21',
                     index:5,
@@ -222,7 +233,9 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    range:'56',
+
                 },{
                     key:'22',
                     index:6,
@@ -231,7 +244,8 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    range:'3',
                 }
             ]
 
@@ -249,7 +263,9 @@ export default class TermSer extends Component{
                     SOERange:'12',
                     SOEUpper:'24',
                     SOELower:'12',
-                    fault:'23'
+                    fault:'23',
+                    range:'12',
+
                 }]
                 currentD.push(aoInfo)
             }
@@ -261,7 +277,8 @@ export default class TermSer extends Component{
                     SOE:'超上限',
                     SOERange:'7',
                     SOEUpper:'28',
-                    SOELower:'21'
+                    SOELower:'21',
+                    range:'51',
                 },{
                     key:'25',
                     index:2,
@@ -269,7 +286,9 @@ export default class TermSer extends Component{
                     SOE:'超下限',
                     SOERange:'12',
                     SOEUpper:'232',
-                    SOELower:'21'
+                    SOELower:'21',
+                    range:'34',
+
                 },{
                     key:'26',
                     index:3,
@@ -277,7 +296,9 @@ export default class TermSer extends Component{
                     SOE:' 恢复',
                     SOERange:'87',
                     SOEUpper:'65',
-                    SOELower:'21'
+                    SOELower:'21',
+                    range:'61',
+
                 },]
 
                 currentD.push(aiInfo)

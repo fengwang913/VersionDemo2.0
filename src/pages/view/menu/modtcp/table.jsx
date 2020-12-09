@@ -19,7 +19,7 @@ const EditableCell = ({
   ...restProps
 }) => {
  
-  const inputNode =inputType === 'funcCode' ? <Select style={{ width: 100 }}>
+  const inputNode =inputType === 'funcCode' ? <Select style={{ width: 180 }}>
                                                   <Option value="Read Coils"> Read Coils</Option>
                                                   <Option value="Read Discreate Inputs"> Read Discreate Inputs</Option>
                                                   <Option value="Read Holding Registers"> Read Holding Registers</Option>
@@ -29,7 +29,7 @@ const EditableCell = ({
                                                   <Option value="Write Coils"> Write Coils</Option>
                                                   <Option value="Write Registers"> Write Registers</Option>
                                               </Select> 
-                                              :<InputNumber />;
+                                              :<InputNumber style={{ width: 80 }} />;
 
   return (
     <td {...restProps}>
@@ -61,12 +61,10 @@ const EditableTable = (props) => {
   const [form] = Form.useForm();
   const [data, setData] = useState(props.originData);
   const [editingKey, setEditingKey] = useState('');
-  console.log('此时的data是多少呢？',data)
   
 
   const isEditing = (record) => record.key === editingKey;
 
-  console.log('此时的editingKey是多少呢？',editingKey)
 
   const edit = (record) => {
     form.setFieldsValue({
@@ -76,9 +74,11 @@ const EditableTable = (props) => {
         funcCode:'',
         Addre:'',
         mappinAddre:'',
+        statusAddress:'',
         number:'',
         timeout:'',
-        netport:'',
+        ethernet:'',
+        circle:'',
       ...record,
     });
     setEditingKey(record.key);
@@ -115,62 +115,73 @@ const EditableTable = (props) => {
     {
         title: '序号',
         dataIndex: 'index',
-        width: '5%',
+        width: 80,
         editable: false,
       },
       {
         title: 'IP',
         dataIndex: 'IP',
-        width: '10%',
+        width: 100,
         editable: false,
       },
     {
       title: 'Port',
       dataIndex: 'port',
-      width: '3%',
+      width: 100,
       editable: false,
     },
     {
         title: 'Slave ID',
         dataIndex: 'slaveId',
-        width: '10%',
+        width: 100,
         editable: false,
       },
     {
       title: '功能码',
       dataIndex: 'funcCode',
-      width: '18%',
+      width: 200,
       editable: true,
     },
     
       {
         title: '地址',
         dataIndex: 'Addre',
-        width: '10%',
+        width: 100,
         editable: true,
       },
       {
         title: '映射地址',
         dataIndex: 'mappinAddre',
-        width: '10%',
+        width: 100,
         editable: true,
       },
       {
         title: '数量',
         dataIndex: 'number',
-        width: '10%',
+        width: 100,
+        editable: true,
+      }, {
+        title: '状态地址',
+        dataIndex: 'statusAddress',
+        width: 100,
         editable: true,
       }, 
-       {
-        title: 'Netport',
-        dataIndex: 'netport',
-        width: '10%',
-        editable: true,
-      },
       {
         title: '响应时间',
         dataIndex: 'timeout',
-        width: '10%',
+        width: 100,
+        editable: true,
+      },
+       {
+        title: 'Ethernet',
+        dataIndex: 'ethernet',
+        width: 100,
+        editable: true,
+      },
+      {
+        title: '周期',
+        dataIndex: 'circle',
+        width: 80,
         editable: true,
       },
     {
@@ -231,6 +242,7 @@ const EditableTable = (props) => {
           },
         }}
         bordered
+        scroll={{ x: 1400}}
         dataSource={data}
         columns={mergedColumns}
         rowClassName="editable-row"

@@ -13,7 +13,8 @@ export default class Subscript extends Component{
                 zone:'123',
                 addr:'1234',
                 size:'1',
-                type:'byte'
+                type:'byte',
+                status:'102',
             },
             {
                 key:'02',
@@ -22,7 +23,8 @@ export default class Subscript extends Component{
                 zone:'123',
                 addr:'1234',
                 size:'1',
-                type:'float'
+                type:'float',
+                status:'652',
             },
             {
                 key:'03',
@@ -31,7 +33,8 @@ export default class Subscript extends Component{
                 zone:'123',
                 addr:'1234',
                 size:'1',
-                type:'ushort'
+                type:'ushort',
+                status:'320',
             },
             {
                 key:'04',
@@ -40,7 +43,8 @@ export default class Subscript extends Component{
                 zone:'123',
                 addr:'1234',
                 size:'1',
-                type:'double'
+                type:'double',
+                status:'125',
             }]
         }
     }

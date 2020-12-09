@@ -15,6 +15,8 @@ export default class Publish extends Component{
                 zone:'123',
                 addr:'1234',
                 size:'1',
+                status:'12345',
+                
             },
             {
                 key:'02',
@@ -23,6 +25,8 @@ export default class Publish extends Component{
                 zone:'123',
                 addr:'1234',
                 size:'1',
+                status:'12345',
+
             },
             {
                 key:'03',
@@ -31,6 +35,8 @@ export default class Publish extends Component{
                 zone:'123',
                 addr:'1234',
                 size:'1',
+                status:'12345',
+
             },
             {
                 key:'04',
@@ -39,6 +45,8 @@ export default class Publish extends Component{
                 zone:'123',
                 addr:'1234',
                 size:'1',
+                status:'12345',
+
             }]
 
 
