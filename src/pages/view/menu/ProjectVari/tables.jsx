@@ -66,6 +66,7 @@ export default class DemoTable extends React.Component {
   };
 
   onSortEnd = ({ oldIndex, newIndex }) => {
+    console.log('我现在在执行 onsortend操作')
     const { dataSource } = this.state;
     if (oldIndex !== newIndex) {
       const newData = arrayMove([].concat(dataSource), oldIndex, newIndex).filter(el => !!el);
@@ -75,6 +76,8 @@ export default class DemoTable extends React.Component {
   };
 
   DraggableBodyRow = ({ className, style, ...restProps }) => {
+    console.log('我现在在执行 DraggableBodyRow操作')
+
     const { dataSource } = this.state;
     // function findIndex base on Table rowKey props and should always be a right array index
     const index = dataSource.findIndex(x => x.index === restProps['data-row-key']);

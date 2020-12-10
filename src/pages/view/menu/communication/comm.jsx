@@ -6,17 +6,11 @@ import { MenuOutlined } from '@ant-design/icons';
 import arrayMove from 'array-move';
 
 
-
 const EditableContext = React.createContext();
-const { Option } = Select;
 
 const DragHandle = sortableHandle(() => (
   <MenuOutlined style={{ cursor: 'pointer', color: '#999' }} />
 ));
-
-
-const SortableItem = sortableElement(props => <tr {...props} />);
-const SortableContainer = sortableContainer(props => <tbody {...props} />);
 
 const EditableRow = ({ index, ...props }) => {
   const [form] = Form.useForm();
@@ -28,6 +22,7 @@ const EditableRow = ({ index, ...props }) => {
     </Form>
   );
 };
+
 const EditableCell = ({
   title,
   editable,
@@ -39,27 +34,10 @@ const EditableCell = ({
 }) => {
   const [editing, setEditing] = useState(false);
   const inputRef = useRef();
-  const zoneSelectRef = useRef();
-  const typeSelectRef = useRef();
-  const byteSelectRef = useRef();
   const form = useContext(EditableContext);
-
   useEffect(() => {
     if (editing) {
-      if(dataIndex === 'zoneType'){
-          zoneSelectRef.current.focus();
-      }
-      if(dataIndex === 'dataType'){
-        typeSelectRef.current.focus();
-      }
-      if(dataIndex === 'byte'){
-        byteSelectRef.current.focus();
-      }if(dataIndex=== 'address' || dataIndex === 'length'){
-        inputRef.current.focus();
-      }
-     
-       
-    
+      inputRef.current.focus();
     }
   }, [editing]);
 
@@ -84,29 +62,7 @@ const EditableCell = ({
 
   if (editable) {
     childNode = editing ? (
-        (dataIndex === 'zoneType'?(
-            <Form.Item
-            style={{
-              margin: 0,
-            }}
-            name={dataIndex}
-            rules={[
-              {
-                required: true,
-                message: `${title} is required.`,
-              },
-            ]}
-          >
-            <Select ref={zoneSelectRef} onPressEnter={save} onBlur={save}>
-                        <Option value='0'>0</Option>
-                        <Option value='1'>1</Option>
-                        <Option value='3'>3</Option>
-                        <Option value='4'>4</Option>
-                    </Select>
-          </Form.Item>
-    
-        )
-    :(dataIndex === 'dataType' ?(<Form.Item
+      <Form.Item
         style={{
           margin: 0,
         }}
@@ -118,39 +74,9 @@ const EditableCell = ({
           },
         ]}
       >
-        <Select ref={typeSelectRef} onPressEnter={save} onBlur={save}>
-                    <Option value='byte'>byte</Option>
-                    <Option value='short'>short</Option>
-                    <Option value='ushort'>ushort</Option>
-                    <Option value='int'>int</Option>
-                    <Option value='uint'>uint</Option>
-                    <Option value='float'>float</Option>
-                    <Option value='double'>double</Option>
-                </Select>
-      </Form.Item>):(
-          dataIndex === 'byte'?(<Form.Item
-            style={{
-              margin: 0,
-            }}
-            name={dataIndex}
-            rules={[
-              {
-                required: true,
-                message: `${title} is required.`,
-              },
-            ]}
-          >
-            <Select ref={byteSelectRef} onPressEnter={save} onBlur={save}>
-                        <Option value='defaut'>defaut</Option>
-                        <Option value='12'>12</Option>
-                        <Option value='21'>21</Option>
-                        <Option value='1234'>1234</Option>
-                        <Option value='4321'>4321</Option>
-                        <Option value='3421'>3421</Option>
-                        <Option value='2143'>2143</Option>
-                    </Select>
-          </Form.Item>):
-      <Input ref={inputRef} onPressEnter={save} onBlur={save} />)))) : (
+        <Input ref={inputRef} onPressEnter={save} onBlur={save} />
+      </Form.Item>
+    ) : (
       <div
         className="editable-cell-value-wrap"
         style={{
@@ -166,8 +92,8 @@ const EditableCell = ({
   return <td {...restProps}>{childNode}</td>;
 };
 
-
-
+const SortableItem = sortableElement(props => <tr {...props} />);
+const SortableContainer = sortableContainer(props => <tbody {...props} />);
 
 export default class Communication extends React.Component {
   constructor(props) {
@@ -181,31 +107,18 @@ export default class Communication extends React.Component {
         render: () => <DragHandle />,
       },
       {
-        title: '区域类型',
-        dataIndex: 'zoneType',
-        width: '10%',
+        title: 'name',
+        dataIndex: 'name',
+        width: '30%',
         editable: true,
       },
       {
-        title: '地址',
+        title: 'age',
+        dataIndex: 'age',
+      },
+      {
+        title: 'address',
         dataIndex: 'address',
-        editable: true,
-      },
-
-      {
-        title: '长度',
-        dataIndex: 'length',
-        editable: true,
-      },
-      {
-        title: '数据类型',
-        dataIndex: 'dataType',
-        editable: true,
-      },
-      {
-        title: '字节序',
-        dataIndex: 'byte',
-        editable: true,
       },
       {
         title: 'operation',
@@ -222,63 +135,66 @@ export default class Communication extends React.Component {
       dataSource: [
         {
           key: '0',
-          zoneType: '1',
-          address: '156',
-          length: '12',
-          dataType:'int',
-          byte:'12',
+          name: 'Edward King 0',
+          age: '32',
           index: 0,
-
+          address: 'London, Park Lane no. 0',
         },
         {
           key: '1',
-          zoneType: '0',
-          address: '32',
-          length: '10',
-          dataType:'float',
-          byte:'21',
+          name: 'Edward King 1',
+          age: '32',
           index: 1,
+          address: 'London, Park Lane no. 1',
         },
-        {
-            key: '2',
-            zoneType: '3',
-            address: '102',
-            length: '8',
-            dataType:'short',
-            byte:'1234',
-            index: 2,
-          },
-          {
-            key: '3',
-            zoneType: '4',
-            address: '101',
-            length: '9',
-            dataType:'double',
-            byte:'4321',
-            index: 3,
-          },
       ],
-      count: 4,
-      visible: false
+      count: 2,
     };
   }
 
+  onSortEnd = ({ oldIndex, newIndex }) => {
+    console.log('我现在在执行 onsortend操作')
+    const { dataSource } = this.state;
+    console.log('在onSortEnd操作',oldIndex !== newIndex)
+    if (oldIndex !== newIndex) {
+      const newData = arrayMove([].concat(dataSource), oldIndex, newIndex).filter(el => !!el);
+      console.log('Sorted items: ', newData);
+      this.setState({ dataSource: newData });
+    }
+  };
+
+  DraggableBodyRow = ({ className, style, ...restProps }) => {
+    console.log('我现在在执行 DraggableBodyRow操作')
+
+    const { dataSource } = this.state;
+    console.log('在DraggableBodyRow操作里的数据',dataSource)
+    console.log('在DraggableBodyRow操作里的数据this.state',this.state)
+    // function findIndex base on Table rowKey props and should always be a right array index
+    const index = dataSource.findIndex(x => x.index === restProps['data-row-key']);
+    return <SortableItem index={index} {...restProps} />;
+  };
+
   handleDelete = (key) => {
+
+    console.log('我现在在执行 handleDelete操作')
+
+
     const dataSource = [...this.state.dataSource];
+    console.log('在handleDelete操作',dataSource)
+
     this.setState({
       dataSource: dataSource.filter((item) => item.key !== key),
     });
   };
   handleAdd = () => {
+    console.log('我现在在执行 handleAdd操作')
+
     const { count, dataSource } = this.state;
     const newData = {
       key: count,
-      zoneType: `0`,
-      address: `${count}`,
-      length:'8',
-      dataType:'byte',
-      byte:'12',
-      index: count,
+      name: `Edward King ${count}`,
+      age: 32,
+      address: `London, Park Lane no. ${count}`,
     };
     this.setState({
       dataSource: [...dataSource, newData],
@@ -286,6 +202,8 @@ export default class Communication extends React.Component {
     });
   };
   handleSave = (row) => {
+
+    console.log('我现在在执行 handleSave操作')
     const newData = [...this.state.dataSource];
     const index = newData.findIndex((item) => row.key === item.key);
     const item = newData[index];
@@ -295,34 +213,8 @@ export default class Communication extends React.Component {
     });
   };
 
-  onSortEnd = ({ oldIndex, newIndex }) => {
-    const { dataSource } = this.state;
-    if (oldIndex !== newIndex) {
-      const newData = arrayMove([].concat(dataSource), oldIndex, newIndex).filter(el => !!el);
-      console.log('Sorted items: ', newData);
-      this.setState({ dataSource: newData });
-    }
-  };
-  
-  DraggableBodyRow = ({ className, style, ...restProps }) => {
-    const { dataSource } = this.state;
-    // function findIndex base on Table rowKey props and should always be a right array index
-    const index = dataSource.findIndex(x => x.index === restProps['data-row-key']);
-    return <SortableItem index={index} {...restProps} />;
-  };
-
-
-  onClose = () => {
-    this.setState({
-      visible: false,
-    });
-  };
- 
-
   render() {
     const { dataSource } = this.state;
-    console.log('this.state.visible',this.state.visible)
-
     const DraggableContainer = props => (
       <SortableContainer
         useDragHandle
@@ -336,7 +228,6 @@ export default class Communication extends React.Component {
       body: {
         wrapper: DraggableContainer,
         row: this.DraggableBodyRow,
-        row: EditableRow ,
         cell: EditableCell,
       },
     };
@@ -344,7 +235,6 @@ export default class Communication extends React.Component {
       if (!col.editable) {
         return col;
       }
-
       return {
         ...col,
         onCell: (record) => ({
@@ -365,29 +255,17 @@ export default class Communication extends React.Component {
             marginBottom: 16,
           }}
         >
-          添加
+          Add a row
         </Button>
-
         <Table
           components={components}
           rowClassName={() => 'editable-row'}
           bordered
+          pagination={false}
           dataSource={dataSource}
           columns={columns}
-          pagination={false}
-          style={{paddingBottom:'20px'}}
         />
-        
       </div>
     );
   }
 }
-
-
-
-
-
-
-
-
-

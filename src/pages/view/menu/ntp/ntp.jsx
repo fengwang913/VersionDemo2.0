@@ -7,9 +7,11 @@ export default class Ntp extends Component{
     render(){
 
         return(
-            <div>             
+            <div  style={{fontSize:'20px',marginTop:'20px'}}>             
                 NTP
-                <MechineTime />
+                <div>
+                    <MechineTime />
+                </div>
             </div>
         )
     } 

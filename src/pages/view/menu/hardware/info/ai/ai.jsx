@@ -1,5 +1,5 @@
 import React,{ Component }  from 'react';
-import { Select,Button  } from 'antd';
+import { Select  } from 'antd';
 import AiTab from './aiTab'
 
 const { Option } = Select;

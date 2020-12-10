@@ -55,7 +55,7 @@ const EditableCell = ({
 };
 
 
-//
+
 const EditableTable = (props) => {
   const [form] = Form.useForm();
 
@@ -65,8 +65,6 @@ const EditableTable = (props) => {
 
 
   const isEditing = (record) => record.key === editingKey;
-
-
 
   const edit = (record) => {
     form.setFieldsValue({

@@ -13,9 +13,7 @@ const DevRealS =() => {
       setNum(num+1)
     },10000)
 
-    
   })
-  
 
   return(
     <div style={{paddingBottom:'10px',marginTop:'10px'}}>
