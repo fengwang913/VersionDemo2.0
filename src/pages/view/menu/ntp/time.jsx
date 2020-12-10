@@ -1,15 +1,12 @@
 import React,{ Component }  from 'react';
 
-import MechineTime from './time'
 
-
-export default class Ntp extends Component{
+export default class MechineTime extends Component{
     render(){
 
         return(
             <div>             
-                NTP
-                <MechineTime />
+               time
             </div>
         )
     } 

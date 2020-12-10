@@ -148,6 +148,7 @@ const EditableTable = (props) => {
         width: '10%',
         editable: true,
       },
+
       {
         title: '数量',
         dataIndex: 'number',

@@ -1,5 +1,8 @@
 import React,{ Component }  from 'react';
 import EditableTable from './tables'
+import { Select  } from 'antd';
+
+const { Option } = Select;
 
 
 export default class Port05 extends Component{
@@ -120,6 +123,20 @@ export default class Port05 extends Component{
           <div>
                <div style={{fontSize:'20px'}} >
                   串口 5
+                  <div style={{fontSize:'16px',margin:'10px',float:'right'}}>
+                  轮询延迟:
+                    <Select defaultValue="33" style={{ width: 100,marginLeft:'10px',marginRight:'10px' }} >
+                        <Option value="33">33ms</Option>
+                        <Option value="23">23ms</Option>
+                        <Option value="13">13ms</Option>
+                        <Option value="43">43ms</Option>
+                    </Select>
+                    响应超时:
+                    <Select defaultValue="33" style={{ width: 100,marginLeft:'10px' }} >
+                        <Option value="33">1000ms</Option>
+                        <Option value="23">2000ms</Option>
+                    </Select>
+                </div>
               </div>
              <EditableTable originData={this.state.originData} />
           </div>

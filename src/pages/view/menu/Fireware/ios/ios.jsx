@@ -7,8 +7,6 @@ import IOS5 from './ios5'
 
 
 
-
-
 export default class IOS extends Component{
   constructor(props){
     super(props)
@@ -23,7 +21,7 @@ export default class IOS extends Component{
       const isShow = this.state.show
 
         return(
-            <div style={{width:'49%',backgroundColor:'white',fontSize:'20px'}}>
+            <div style={{width:'49%',fontSize:'20px'}}>
                 <div  style={{width:'300px',margin:'8px'}}>
                     IOS
                     <div>
