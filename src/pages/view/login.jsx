@@ -10,7 +10,7 @@ let history = createBrowserHistory()
 
 const Login = () => {
     const onFinish = values => {
-      if(values.username === '1234' && values.password === '1234'){
+      if( values.password === '1234'){
           console.log('我可以登录了！')
           console.log('history',history)
           history.push(`/view`);
@@ -39,14 +39,14 @@ const Login = () => {
                 marginLeft:'38vw',
         }}
             >
-      <Form.Item
+      {/* <Form.Item
         name="username"
         rules={[{ required: true, message: '请输入用户名!' }]}
       >
         <Input 
             prefix={<UserOutlined style={{width:'100%'}} className="site-form-item-icon" />} 
             placeholder="Username" />
-      </Form.Item>
+      </Form.Item> */}
       <Form.Item
         name="password"
         rules={[{ required: true, message: '请输入密码!' }]}
