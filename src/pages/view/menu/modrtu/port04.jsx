@@ -19,6 +19,8 @@ export default class Port04 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
+            timeout:'200ms',
+
           
         },{
             key:'02',
@@ -30,6 +32,8 @@ export default class Port04 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
+            timeout:'200ms',
+
       },
       {
             key:'03',
@@ -41,6 +45,8 @@ export default class Port04 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
+            timeout:'200ms',
+
       },
       {
             key:'04',
@@ -52,6 +58,8 @@ export default class Port04 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
+            timeout:'200ms',
+
       },{
             key:'05',
             index:'5',
@@ -62,6 +70,8 @@ export default class Port04 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
+            timeout:'200ms',
+
       },{
             key:'06',
             index:'6',
@@ -72,6 +82,8 @@ export default class Port04 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
+            timeout:'200ms',
+
     },{
             key:'07',
             index:'7',
@@ -82,6 +94,8 @@ export default class Port04 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
+            timeout:'200ms',
+
     },{
             key:'08',
             index:'8',
@@ -92,6 +106,8 @@ export default class Port04 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
+            timeout:'200ms',
+
     },{
             key:'09',
             index:'9',
@@ -102,23 +118,46 @@ export default class Port04 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
-    },]}
+            timeout:'200ms',
+
+    },],
+    showExp:'none',}
+    }
+    alertClick = () => {
+
+        let currentShow = this.state.showExp
+        let showExp = ''
+  
+        if(currentShow === 'none'){
+          showExp = 'inline'
+        }if(currentShow === 'inline'){
+          showExp = 'none'
+        }
+        this.setState({showExp:showExp})
     }
   render(){
+    let showExp = this.state.showExp
 
       return(
           <div>
               <div style={{fontSize:'20px'}} >
                   串口 4
                   <div style={{fontSize:'16px',margin:'10px',float:'right'}}>
-                    响应超时:
-                    <Select defaultValue="33" style={{ width: 100,marginLeft:'10px' }} >
-                        <Option value="33">1000ms</Option>
-                        <Option value="23">2000ms</Option>
+                  <span  
+                        onClick={this.alertClick}
+                        style={{marginLeft :'10px',cursor:'pointer'}}>
+                    静默时间:
+                    </span>
+                    <Select defaultValue="1" style={{ width: 100,marginLeft:'10px' }} >
+                        <Option value="1">1ms</Option>
+                        <Option value="2">2ms</Option>
                     </Select>
                 </div>
               </div>
-              <EditableTable  originData={this.state.originData} />
+              <EditableTable  originData={this.state.originData}/>
+              <div style={{display:showExp ,fontSize:'18px'}}>
+                  这里是有关静默时间的解释
+              </div>
           </div>
       )
   }

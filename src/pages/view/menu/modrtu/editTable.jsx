@@ -168,6 +168,12 @@ class RtuTable extends React.Component {
               editable: true,
             }, 
             {
+                title: '响应超时',
+                dataIndex: 'timeout',
+                width: '7%',
+                editable: true,
+              },
+            {
               title: '周期',
               dataIndex: 'circle',
               width: '7%',
@@ -209,6 +215,7 @@ class RtuTable extends React.Component {
       statusAddre:'12',
       number:'12',
       circle:'3',
+      timeout:'200ms'
     };
     this.setState({
       dataSource: [...dataSource, newData],
@@ -251,15 +258,7 @@ class RtuTable extends React.Component {
     });
     return (
       <div>
-        <Button
-          onClick={this.handleAdd}
-          type="primary"
-          style={{
-            marginBottom: 16,
-          }}
-        >
-          Add a row
-        </Button>
+    
         <Table
           components={components}
           rowClassName={() => 'editable-row'}
@@ -269,6 +268,16 @@ class RtuTable extends React.Component {
           pagination={false}
           style={{paddingBottom:'20px'}}
         />
+        <Button
+          onClick={this.handleAdd}
+          type="primary"
+          style={{
+            marginBottom: 16,
+            float:'right'
+          }}
+        >
+          新增
+        </Button>
       </div>
     );
   }

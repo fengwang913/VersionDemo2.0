@@ -131,7 +131,7 @@ const EditableTable = (props) => {
       {
         title: '地址',
         dataIndex: 'Addre',
-        width: '10%',
+        width: '8%',
         editable: true,
       },
       {
@@ -143,13 +143,19 @@ const EditableTable = (props) => {
       {
         title: '状态地址',
         dataIndex: 'statusAddre',
-        width: '10%',
+        width: '8%',
         editable: true,
       },
 
       {
         title: '数量',
         dataIndex: 'number',
+        width: '5%',
+        editable: true,
+      }, 
+      {
+        title: '响应超时',
+        dataIndex: 'timeout',
         width: '9%',
         editable: true,
       }, 

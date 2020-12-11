@@ -21,6 +21,7 @@ export default class Port01 extends Component{
             statusAddre:'12',
             number:'12',
             circle:'3',
+            timeout:'200ms',
           
         },{
           key:'02',
@@ -32,6 +33,8 @@ export default class Port01 extends Component{
           statusAddre:'12',
           number:'12',
           circle:'3',
+          timeout:'200ms',
+
       },
       {
           key:'03',
@@ -43,6 +46,8 @@ export default class Port01 extends Component{
           statusAddre:'12',
           number:'12',
           circle:'3',
+          timeout:'200ms',
+
         },
       {
           key:'04',
@@ -54,6 +59,8 @@ export default class Port01 extends Component{
           statusAddre:'12',
           number:'12',
           circle:'3',
+          timeout:'200ms',
+
       },{
           key:'05',
           index:'5',
@@ -64,6 +71,8 @@ export default class Port01 extends Component{
           statusAddre:'12',
           number:'12',
           circle:'3',
+          timeout:'200ms',
+
       },{
         key:'06',
         index:'6',
@@ -74,6 +83,8 @@ export default class Port01 extends Component{
         statusAddre:'12',
         number:'12',
         circle:'3',
+        timeout:'200ms',
+
     }],
         showExp:'none',
     }
@@ -128,13 +139,6 @@ handleDelete = (key) => {
               <div style={{fontSize:'20px'}} >
                   串口 1
                   <div style={{fontSize:'16px',margin:'10px',float:'right'}}>
-                    响应超时:
-                    <Select defaultValue="33" style={{ width: 100,marginLeft:'10px' }} >
-                        <Option value="33">1000ms</Option>
-                        <Option value="23">2000ms</Option>
-                        <Option value="13">13ms</Option>
-                        <Option value="43">43ms</Option>
-                    </Select>
                     <span  
                         onClick={this.alertClick}
                         style={{marginLeft :'10px',cursor:'pointer'}}>
