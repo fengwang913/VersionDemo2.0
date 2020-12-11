@@ -291,7 +291,7 @@ export default class ModbusTab extends React.Component {
 
   render() {
     const { dataSource } = this.state;
-    console.log('this.state.visible',this.state.visible)
+
 
     const components = {
       body: {

@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
-import { Table, Input, Button, Popconfirm, Form ,Select} from 'antd';
+import { Table, Input, Button, Popconfirm, Form ,Select ,Drawer} from 'antd';
+import SortTable from './rtuSort'
+
 const EditableContext = React.createContext();
 
 const { Option } = Select;
@@ -126,7 +128,7 @@ class RtuTable extends React.Component {
         {
             title: '序号',
             dataIndex: 'index',
-            width: '5%',
+            width: '7%',
             editable: false,
           },
           {
@@ -181,19 +183,20 @@ class RtuTable extends React.Component {
             },
 
       {
-        title: 'operation',
+        title: '操作',
         dataIndex: 'operation',
         render: (text, record) =>
           this.state.dataSource.length >= 1 ? (
             <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(record.key)}>
-              <a>Delete</a>
+              <a>删除</a>
             </Popconfirm>
           ) : null,
       },
     ];
     this.state = {
       dataSource: props.originData,
-      count: props.originData.length,
+      count: props.originData.length+1,
+      visible: false
     };
   }
 
@@ -232,6 +235,19 @@ class RtuTable extends React.Component {
     });
   };
 
+  showDrawer = () => {
+    this.setState({
+      visible: true,
+    });
+  };
+  onClose = () => {
+    this.setState({
+      visible: false,
+    });
+  };
+ 
+
+
   render() {
     const { dataSource } = this.state;
     const components = {
@@ -268,16 +284,30 @@ class RtuTable extends React.Component {
           pagination={false}
           style={{paddingBottom:'20px'}}
         />
-        <Button
-          onClick={this.handleAdd}
-          type="primary"
-          style={{
-            marginBottom: 16,
-            float:'right'
-          }}
+        <Drawer
+          title="排序"
+          width={1000}
+          closable={false}
+          onClose={this.onClose}
+          visible={this.state.visible}
         >
-          新增
-        </Button>
+            <SortTable data={dataSource} />
+        </Drawer>
+        <div style={{ float:'right' }}>
+            <Button
+            onClick={this.handleAdd}
+            type="primary"
+            style={{
+                marginBottom: 16,
+            }}
+            >
+            新增
+            </Button>
+            <Button type="primary" onClick={this.showDrawer} style={{marginLeft:'10px'}}>
+                排序
+            </Button>
+
+        </div>
       </div>
     );
   }

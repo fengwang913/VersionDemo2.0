@@ -18,32 +18,53 @@ const columns = [
     render: () => <DragHandle />,
   },
   {
-    title: '区域类型',
-    dataIndex: 'zoneType',
+    title: '序号',
+    dataIndex: 'index',
+    width: 50,
+  },
+  {
+    title: '从站地址',
+    dataIndex: 'slaveId',
     width: '10%',
-    editable: true,
   },
   {
-    title: '地址',
-    dataIndex: 'address',
-    editable: true,
+    title: '功能码',
+    dataIndex: 'funcCode',
+    width: '19%',
   },
+  
+    {
+      title: '地址',
+      dataIndex: 'Addre',
+      width: '10%',
+    },
+    {
+      title: '映射地址',
+      dataIndex: 'mappinAddre',
+      width: '10%',
+    },
+    {
+      title: '状态地址',
+      dataIndex: 'statusAddre',
+      width: '10%',
+    },
 
-  {
-    title: '长度',
-    dataIndex: 'length',
-    editable: true,
-  },
-  {
-    title: '数据类型',
-    dataIndex: 'dataType',
-    editable: true,
-  },
-  {
-    title: '字节序',
-    dataIndex: 'byte',
-    editable: true,
-  },
+    {
+      title: '数量',
+      dataIndex: 'number',
+      width: '9%',
+    }, 
+    {
+        title: '响应超时',
+        dataIndex: 'timeout',
+        width: '7%',
+      },
+    {
+      title: '周期',
+      dataIndex: 'circle',
+      width: '7%',
+    },
+  
   
 ];
 
@@ -74,7 +95,6 @@ export default class SortTable extends React.Component {
 
   DraggableBodyRow = ({ className, style, ...restProps }) => {
     const { dataSource } = this.state;
-    // function findIndex base on Table rowKey props and should always be a right array index
     const index = dataSource.findIndex(x => x.index === restProps['data-row-key']);
     return <SortableItem index={index} {...restProps} />;
   };
