@@ -22,8 +22,11 @@ const Login = () => {
   return (
           <div style={{height:'100vh'}}>
           <div style={{ height:'50vh',backgroundColor:'#043D5D'}}>
-              <div style={{color:'white', fontSize:'58px',paddingTop:'30vh',paddingLeft:'22vw'}}>
-                    北京龙鼎源科技股份有限公司
+              <div style={{color:'white', fontSize:'58px',paddingTop:'22vh',paddingLeft:'28vw'}}>
+                 200N 设备配置系统
+              </div>
+              <div style={{color:'white', fontSize:'24px',paddingTop:'15px',paddingLeft:'24vw'}}>
+                   北&nbsp;&nbsp;&nbsp;&nbsp;京&nbsp;&nbsp;&nbsp;&nbsp;龙&nbsp;&nbsp;&nbsp;&nbsp;鼎&nbsp;&nbsp;&nbsp;&nbsp;源&nbsp;&nbsp;&nbsp;&nbsp;科&nbsp;&nbsp;&nbsp;&nbsp;技&nbsp;&nbsp;&nbsp;&nbsp;股&nbsp;&nbsp;&nbsp;&nbsp;份&nbsp;&nbsp;&nbsp;&nbsp;有&nbsp;&nbsp;&nbsp;&nbsp;限&nbsp;&nbsp;&nbsp;&nbsp;公&nbsp;&nbsp;&nbsp;&nbsp;司
               </div>
           </div>
   
