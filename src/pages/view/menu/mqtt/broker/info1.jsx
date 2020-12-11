@@ -13,7 +13,7 @@ export default class Broker1 extends Component{
             originData : [{
                 key:'01',
                 IP:'255.255.255.255',
-                port:'1',
+                port:'1883',
                 ClientID:'1234',
                 ConnectTimeout:'150',
                 KeepAliveInterval:'210',

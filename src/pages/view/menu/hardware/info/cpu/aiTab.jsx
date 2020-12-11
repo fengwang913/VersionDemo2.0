@@ -23,8 +23,9 @@ const EditableCell = ({
                                                   <Option value="Read Coils">超上限</Option>
                                                   <Option value="Read Discreate Inputs"> 超下限</Option>
                                                   <Option value="Read Holding Registers">恢复</Option>
-                                              </Select> 
-                                              :<Input />;
+                                              </Select> :
+                   (inputType === 'range' ? <Input  style={{ width: 80 }} />
+                                              :<Input />);
 
   return (
     <td {...restProps}>

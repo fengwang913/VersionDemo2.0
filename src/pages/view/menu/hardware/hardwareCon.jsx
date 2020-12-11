@@ -191,7 +191,7 @@ export default class TermSer extends Component{
                     SOERange:'7',
                     SOEUpper:'28',
                     SOELower:'21',
-                    range:'24',
+                    range:'24 - 50',
                 },{
                     key:'18',
                     index:2,
@@ -201,7 +201,7 @@ export default class TermSer extends Component{
                     SOERange:'7',
                     SOEUpper:'28',
                     SOELower:'21',
-                    range:'21',
+                    range:'21 - 60',
 
                 },{
                     key:'19',
@@ -212,7 +212,7 @@ export default class TermSer extends Component{
                     SOERange:'7',
                     SOEUpper:'28',
                     SOELower:'21',
-                    range:'35',
+                    range:'35 - 80',
 
                 },{
                     key:'20',
@@ -223,7 +223,7 @@ export default class TermSer extends Component{
                     SOERange:'7',
                     SOEUpper:'28',
                     SOELower:'21',
-                    range:'31',
+                    range:'31 - 40',
 
                 },{
                     key:'21',
@@ -234,7 +234,7 @@ export default class TermSer extends Component{
                     SOERange:'7',
                     SOEUpper:'28',
                     SOELower:'21',
-                    range:'56',
+                    range:'56 - 84',
 
                 },{
                     key:'22',
@@ -245,7 +245,7 @@ export default class TermSer extends Component{
                     SOERange:'7',
                     SOEUpper:'28',
                     SOELower:'21',
-                    range:'3',
+                    range:'3 - 12',
                 }
             ]
 
@@ -264,7 +264,7 @@ export default class TermSer extends Component{
                     SOEUpper:'24',
                     SOELower:'12',
                     fault:'23',
-                    range:'12',
+                    range:'12 - 52',
 
                 }]
                 currentD.push(aoInfo)
@@ -278,7 +278,7 @@ export default class TermSer extends Component{
                     SOERange:'7',
                     SOEUpper:'28',
                     SOELower:'21',
-                    range:'51',
+                    range:'51 - 57',
                 },{
                     key:'25',
                     index:2,
@@ -287,7 +287,7 @@ export default class TermSer extends Component{
                     SOERange:'12',
                     SOEUpper:'232',
                     SOELower:'21',
-                    range:'34',
+                    range:'34 - 56',
 
                 },{
                     key:'26',
@@ -297,7 +297,7 @@ export default class TermSer extends Component{
                     SOERange:'87',
                     SOEUpper:'65',
                     SOELower:'21',
-                    range:'61',
+                    range:'61 - 99',
 
                 },]
 

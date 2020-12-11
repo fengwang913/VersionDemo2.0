@@ -22,11 +22,11 @@ export default class ModTCP extends Component{
                         <Option value="13">13ms</Option>
                         <Option value="43">43ms</Option>
                     </Select>
-                    响应超时:
+                    {/* 响应超时:
                     <Select defaultValue="33" style={{ width: 100,marginLeft:'10px' }} >
                         <Option value="33">1000ms</Option>
                         <Option value="23">2000ms</Option>
-                    </Select>
+                    </Select> */}
                 </div>
                 </div>
                 <NetWork01 />

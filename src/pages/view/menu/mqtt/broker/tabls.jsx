@@ -119,7 +119,6 @@ const BrokerTab = (props) => {
     }
   };
 
-
   //画table
   const columns = [
     {

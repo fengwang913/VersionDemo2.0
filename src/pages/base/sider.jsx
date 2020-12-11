@@ -25,7 +25,7 @@ const Demo = (props) => {
       <>
         <Menu
           style={{ width: 250 }}
-          defaultSelectedKeys={['port']}
+          defaultSelectedKeys={['view/ntp']}
           defaultOpenKeys={['sub1','sub2']}
           mode="inline"
           selectedKeys={props.props.leftMenuHighLight()}

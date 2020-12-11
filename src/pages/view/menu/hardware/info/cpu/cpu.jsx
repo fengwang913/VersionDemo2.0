@@ -18,11 +18,10 @@ export default class Cpu extends Component{
 
     render(){
         const info = this.props.info
-        console.log('我现在的ingo是多少？？？？？？',info)
         const diInfo = info.slice(0,12)
         const doInfo = info.slice(12,16)
         const aiInfo = info.slice(16,22)
-        console.log("我们三个是多少呢",diInfo,doInfo,aiInfo)
+
 
 
 
