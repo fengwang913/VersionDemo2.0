@@ -57,7 +57,7 @@ const Demo = (props) => {
                         <Menu.Item key="view/project" >Project</Menu.Item>              
                     </SubMenu > 
 
-                    <Menu.Item key="view/ntp">Data&Time</Menu.Item>
+                    {/* <Menu.Item key="view/ntp">Data&Time</Menu.Item> */}
                     <Menu.Item key="view/general">General</Menu.Item>                
                
                 </SubMenu >
