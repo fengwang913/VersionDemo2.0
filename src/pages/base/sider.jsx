@@ -2,11 +2,11 @@ import React  from 'react';
 import { Layout, Menu, } from 'antd';
 import {
     DesktopOutlined,
-    UserOutlined,
+    // UserOutlined,
     VideoCameraOutlined,
     UploadOutlined,
     // ContainerOutlined,
-    MailOutlined,
+    // MailOutlined,
     CalendarOutlined,
     AppstoreOutlined,
     SettingOutlined,
@@ -25,7 +25,7 @@ const Demo = (props) => {
       <>
         <Menu
           style={{ width: 250 }}
-          defaultSelectedKeys={['view/ntp']}
+          defaultSelectedKeys={["view/port"]}
           defaultOpenKeys={['sub1','sub2']}
           mode="inline"
           selectedKeys={props.props.leftMenuHighLight()}
@@ -38,21 +38,30 @@ const Demo = (props) => {
                             paddingTop:'6px',
                             color:'#C0C0C0',
                             marginTop:'4px',}}>Configuration</div>
-
-                <Menu.Item key="view/ntp" icon={<VideoCameraOutlined />}>
-                    NTP
-                </Menu.Item>
                 <SubMenu  key="sub1" icon={<DesktopOutlined />} title="Communication">
-                    <Menu.Item key="view/port">Port</Menu.Item>
-                        <SubMenu  key="sub2"  title="Protocol">
+                    <Menu.Item key="view/port">Device</Menu.Item>
+                    <SubMenu  key="sub2"  title="Protocol">
                             <Menu.Item key="view/ModbusRTU-master">ModbusRTU-Master</Menu.Item>
                             <Menu.Item key="view/ModbusTCP-Master">ModbusTCP-Client</Menu.Item>                
                             <Menu.Item key="view/mqtt">MQTT</Menu.Item>                
-                        </SubMenu >                
+                    </SubMenu >                
                 </SubMenu >
+
                 <Menu.Item key="view/hardwareconfig" icon={<VideoCameraOutlined />}>
-                    Hardware config
+                    IO Module
                 </Menu.Item>
+                
+                <SubMenu  key="sub2" icon={<DesktopOutlined />} title="System">
+                    <SubMenu  key="sub3"  title="Upgrade">
+                        <Menu.Item key="view/firmware" >Firmware upgrade</Menu.Item>
+                        <Menu.Item key="view/project" >Project</Menu.Item>              
+                    </SubMenu > 
+
+                    <Menu.Item key="view/ntp">Data&Time</Menu.Item>
+                    <Menu.Item key="view/general">General</Menu.Item>                
+               
+                </SubMenu >
+   
                 <div 
                     style={{height:'16px',
                         marginLeft:'6px',
@@ -62,7 +71,7 @@ const Demo = (props) => {
                     Log
                 </Menu.Item>
                 <Menu.Item key="view/devicerealtime" icon={<CalendarOutlined />}>
-                    Device Status 
+                    IO Point Status 
                 </Menu.Item>
                 <Menu.Item key="view/proVariable" icon={<AppstoreOutlined />}>
                     Project Variables
@@ -72,16 +81,16 @@ const Demo = (props) => {
                 </Menu.Item>
                 <Menu.Item key="view/communication" icon={<LinkOutlined />}>
                     Communication Datagram
-                </Menu.Item>
-
+                </Menu.Item>  
+{/* 
                 <div 
                     style={{height:'16px',
                         marginLeft:'6px',
                         paddingTop:'6px',
                         color:'#C0C0C0'}}>Upgrade</div>
                 <Menu.Item key="view/firmware" icon={<MailOutlined />}>Firmware upgrade</Menu.Item>
-                <Menu.Item key="view/project" icon={<UserOutlined />}>Project</Menu.Item>
-          
+                <Menu.Item key="view/project" icon={<UserOutlined />}>Project</Menu.Item> */}
+                
         </Menu>
       </>
     );

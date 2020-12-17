@@ -1,9 +1,9 @@
 import React,{ Component }  from 'react';
 import { Button } from 'antd';
 
-import IOS3 from './ios3'
-import IOS4 from './ios4'
-import IOS5 from './ios5'
+import IOS1 from './ios3'
+import IOS2 from './ios4'
+import IOS3 from './ios5'
 
 
 
@@ -28,9 +28,9 @@ export default class IOS extends Component{
                         <Button onClick={this.isShow}>升级检测</Button>
                     </div>
                    <div style={{display:isShow}}>
+                        <IOS1 />
+                        <IOS2 />
                         <IOS3 />
-                        <IOS4 />
-                        <IOS5 />
                    </div>
                 </div>
             </div>
@@ -38,6 +38,3 @@ export default class IOS extends Component{
     }
 
 }
-
-
-

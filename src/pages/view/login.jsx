@@ -1,5 +1,5 @@
 import { Form, Input, Button } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import {  LockOutlined } from '@ant-design/icons';
 
 import {createBrowserHistory} from "history";
 

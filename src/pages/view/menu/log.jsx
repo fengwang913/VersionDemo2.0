@@ -85,6 +85,7 @@ const data = [
 ];
 
 
+
 export default class Log extends Component{
     render(){
 

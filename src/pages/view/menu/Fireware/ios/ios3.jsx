@@ -28,7 +28,7 @@ const props = {
   },
 };
 
-export default class IOS3 extends Component{
+export default class IOS1 extends Component{
     render(){
 
         return(
@@ -38,9 +38,9 @@ export default class IOS3 extends Component{
                               border:'1px solid #eee',
                               marginTop:'20px',
                               padding:'10px'}}>
-                    IOS3
+                    IOS1
                     <div  style={{fontSize:'14px'}}>
-                      目前IOS3的版本信息为xxxxxxx
+                      目前IOS1的版本信息为xxxxxxx
                     </div>
                     <div style={{marginTop:'14px',display:'flex'}}>
                         <Upload {...props}>

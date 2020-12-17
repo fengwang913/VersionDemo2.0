@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import Item from './headerItem/item'
 
 import {
     MenuOutlined,
@@ -53,9 +54,11 @@ export default class Header extends Component{
                                 color:'#C0C0C0',}} >
                             设备类型：Version: 1.1.1 Serial Number: A0477E0C GUI Version: 1.01.1
                         </div>
-                        
-                    
-        </div>
+           
+                </div>
+                <div style={{backgroundColor:'#043D5D',color:'white'}}>
+                    <Item />
+                </div>
         </div>
         
         )
