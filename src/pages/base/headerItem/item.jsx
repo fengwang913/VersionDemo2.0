@@ -76,7 +76,7 @@ export default class Item extends Component{
         return(
             <div  style={{fontSize:'20px',marginTop:'20px',paddingRight:'20px'}}>             
                 <Dropdown overlay={menu}>
-                    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                    <a className="ant-dropdown-link" style={{color:'white'}} onClick={e => e.preventDefault()} >
                         <UserOutlined />
                     </a>
                 </Dropdown>
