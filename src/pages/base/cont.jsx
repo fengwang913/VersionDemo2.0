@@ -14,8 +14,8 @@ export default class Cont extends React.Component {
         
         <Layout className="site-layout">
           
-          <Content style={{ margin: '0px 24px',maxHeight:'90vh' }}>
-              <View />
+          <Content style={{ margin: '0px 24px',maxHeight:'90vh'  }}>
+              <View/>
           </Content>
         </Layout>
 
