@@ -26,7 +26,7 @@ const Demo = (props) => {
         <Menu
           style={{ width: 250 }}
           defaultSelectedKeys={["view/port"]}
-          defaultOpenKeys={['sub1','sub2']}
+          defaultOpenKeys={['sub1','sub2','sub3','sub4']}
           mode="inline"
           selectedKeys={props.props.leftMenuHighLight()}
           onClick={props.props._handleClick}
@@ -51,14 +51,14 @@ const Demo = (props) => {
                     IO Module
                 </Menu.Item>
                 
-                <SubMenu  key="sub2" icon={<DesktopOutlined />} title="System">
-                    <SubMenu  key="sub3"  title="Upgrade">
+                <SubMenu  key="sub3" icon={<DesktopOutlined />} title="System">
+                    <SubMenu  key="sub4"  title="Upgrade">
                         <Menu.Item key="view/firmware" >Firmware upgrade</Menu.Item>
                         <Menu.Item key="view/project" >Project</Menu.Item>              
                     </SubMenu > 
 
                     {/* <Menu.Item key="view/ntp">Data&Time</Menu.Item> */}
-                    <Menu.Item key="view/general">General</Menu.Item>                
+                    <Menu.Item key="view/general">Data & Time</Menu.Item>                
                
                 </SubMenu >
    
@@ -73,11 +73,11 @@ const Demo = (props) => {
                 <Menu.Item key="view/devicerealtime" icon={<CalendarOutlined />}>
                     IO Point Status 
                 </Menu.Item>
-                <Menu.Item key="view/proVariable" icon={<AppstoreOutlined />}>
+                {/* <Menu.Item key="view/proVariable" icon={<AppstoreOutlined />}>
                     Project Variables
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item key="view/modbusAdress" icon={<SettingOutlined />}>
-                    Modbus Address Values
+                   Data
                 </Menu.Item>
                 <Menu.Item key="view/communication" icon={<LinkOutlined />}>
                     Communication Datagram

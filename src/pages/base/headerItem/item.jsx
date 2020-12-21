@@ -5,6 +5,7 @@ import {createBrowserHistory} from "history";
 
 import Access from './access'
 import { Modal } from 'antd';
+import Language from './language';
 // import Reset from './reset'
 // import  '../../../assets/css/header.css'
 
@@ -20,6 +21,7 @@ export default class Item extends Component{
 
             showAccess: false,
             // resetFlag:false,
+            languageFlag:false,
             loading: false,
           };
         
@@ -32,6 +34,9 @@ export default class Item extends Component{
         }
         if(e.key === 'access'){
             this.setState({ showAccess:true });
+        }
+        if(e.key === 'language'){
+            this.setState({ languageFlag:true });
         }
         if(e.key === 'reset'){
             Modal.warning({
@@ -47,16 +52,35 @@ export default class Item extends Component{
         console.log('wo bei dian ji le',modal2Visible,)
         this.setState({ showAccess:false });
       }
-      resetFlag2Visible = () => {
+      language2Visible = () => {
         console.log('wo bei dian ji le')
-        this.setState({ resetFlag:false });
+        this.setState({ languageFlag:false });
       }
+
       resetOk = () => {
           this.setState({
               resetFlag:false,
               loading:true
           })
       }
+
+      onChange = (value) => {
+        console.log(`selected ${value}`);
+      }
+      
+      onBlur = () => {
+        console.log('blur');
+      }
+      
+      onFocus =() => {
+        console.log('focus');
+      }
+      
+      onSearch = (val) => {
+        console.log('search:', val);
+      }
+      
+
     
     render(){
         const menu = (
@@ -66,6 +90,9 @@ export default class Item extends Component{
               </Menu.Item>
               <Menu.Item key='access'>
                   修改密码
+              </Menu.Item>
+              <Menu.Item key='language'>
+                  语言
               </Menu.Item>
               <Menu.Item key='reset'>
                   重置
@@ -80,6 +107,12 @@ export default class Item extends Component{
                         <UserOutlined />
                     </a>
                 </Dropdown>
+                <Language languageFlag={this.state.languageFlag}
+                          language2Visible={this.language2Visible}
+                          onChange={this.onChange} 
+                          onBlur={this.onBlur}
+                          onFocus={this.onFocus}
+                          onSearch={this.onSearch}/>
                 <Access 
                     showAccess = {this.state.showAccess} 
                     showAccesss2Visible={this.showAccesss2Visible}/>

@@ -1,8 +1,5 @@
 import React,{ Component }  from 'react';
-import EditableTable from './tables'
-import { Select  } from 'antd';
-
-const { Option } = Select;
+import RtuTable from './editTable';
 
 
 export default class Port05 extends Component{
@@ -138,41 +135,58 @@ export default class Port05 extends Component{
             showExp:'none',
         }
     }
-    alertClick = () => {
-
-        let currentShow = this.state.showExp
-        let showExp = ''
-  
-        if(currentShow === 'none'){
-          showExp = 'inline'
-        }if(currentShow === 'inline'){
-          showExp = 'none'
-        }
-        this.setState({showExp:showExp})
-    }
+    handleDelete = (key) => {
+        const dataSource = [...this.state.dataSource];
+        this.setState({
+          dataSource: dataSource.filter((item) => item.key !== key),
+        });
+      };
+      handleAdd = () => {
+        const { count, dataSource } = this.state;
+        const newData = {
+          key: count,
+          name: `Edward King ${count}`,
+          age: 32,
+          address: `London, Park Lane no. ${count}`,
+        };
+        this.setState({
+          dataSource: [...dataSource, newData],
+          count: count + 1,
+        });
+      };
+      handleSave = (row) => {
+        const newData = [...this.state.dataSource];
+        const index = newData.findIndex((item) => row.key === item.key);
+        const item = newData[index];
+        newData.splice(index, 1, { ...item, ...row });
+        this.setState({
+          dataSource: newData,
+        });
+      };
+      alertClick = () => {
+    
+          let currentShow = this.state.showExp
+          let showExp = ''
+    
+          if(currentShow === 'none'){
+            showExp = 'inline'
+          }if(currentShow === 'inline'){
+            showExp = 'none'
+          }
+          this.setState({showExp:showExp})
+      }
   render(){
-    let showExp = this.state.showExp
-
       return(
           <div>
                <div style={{fontSize:'20px'}} >
                   串口 5
-                  <div style={{fontSize:'16px',margin:'10px',float:'right'}}>
-                  <span  
-                        onClick={this.alertClick}
-                        style={{marginLeft :'10px',cursor:'pointer'}}>
-                    静默时间:
-                    </span>
-                    <Select defaultValue="1" style={{ width: 100,marginLeft:'10px' }} >
-                        <Option value="1">1ms</Option>
-                        <Option value="2">2ms</Option>
-                    </Select>
-                </div>
               </div>
-              <EditableTable  originData={this.state.originData}/>
-              <div style={{display:showExp ,fontSize:'18px'}}>
-                  这里是有关静默时间的解释
-              </div>
+              <RtuTable originData={this.state.originData} 
+                        handleDelete={this.handleDelete}
+                        handleAdd={this.handleAdd}
+                        handleSave={this.handleSave}
+                        alertClick={this.alertClick}
+                        showExp={this.state.showExp}/> 
           </div>
       )
   }

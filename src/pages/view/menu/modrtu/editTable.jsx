@@ -249,6 +249,7 @@ class RtuTable extends React.Component {
 
 
   render() {
+    const showExp = this.props.showExp
     const { dataSource } = this.state;
     const components = {
       body: {
@@ -274,7 +275,32 @@ class RtuTable extends React.Component {
     });
     return (
       <div>
-    
+          <div style={{fontSize:'16px',float:'right',marginTop:'-23px'}}>
+            <span  
+              onClick={this.props.alertClick}
+              style={{marginLeft :'10px',cursor:'pointer'}}>
+                静默时间:
+              </span>
+              <Select defaultValue="1" style={{ width: 100,marginLeft:'10px' }} >
+                  <Option value="1">1ms</Option>
+                  <Option value="2">2ms</Option>
+              </Select>
+  
+              <Button
+                  onClick={this.handleAdd}
+                  type="primary"
+                  style={{
+                        marginBottom: 16,
+                         marginLeft:'10px'
+                        }}>
+                        新增
+              </Button>
+              <Button type="primary"
+                      onClick={this.showDrawer} 
+                      style={{marginLeft:'10px'}}>
+                      排序
+               </Button>
+          </div>
         <Table
           components={components}
           rowClassName={() => 'editable-row'}
@@ -293,21 +319,9 @@ class RtuTable extends React.Component {
         >
             <SortTable data={dataSource} />
         </Drawer>
-        <div style={{ float:'right' }}>
-            <Button
-            onClick={this.handleAdd}
-            type="primary"
-            style={{
-                marginBottom: 16,
-            }}
-            >
-            新增
-            </Button>
-            <Button type="primary" onClick={this.showDrawer} style={{marginLeft:'10px'}}>
-                排序
-            </Button>
-
-        </div>
+          <div style={{display:showExp ,fontSize:'18px'}}>
+                    这里是有关静默时间的解释
+          </div> 
       </div>
     );
   }

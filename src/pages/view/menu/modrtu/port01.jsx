@@ -1,9 +1,9 @@
 import React,{ Component }  from 'react';
 // import EditableTable from './tables';
-import { Select  } from 'antd';
+
 import RtuTable from './editTable';
 
-const { Option } = Select;
+
 
 
 export default class Port01 extends Component{
@@ -132,32 +132,18 @@ handleDelete = (key) => {
   }
 
   render(){
-      let showExp = this.state.showExp
-
       return(
           <div>
               <div style={{fontSize:'20px'}} >
                   串口 1
-                  <div style={{fontSize:'16px',margin:'10px',float:'right'}}>
-                    <span  
-                        onClick={this.alertClick}
-                        style={{marginLeft :'10px',cursor:'pointer'}}>
-                    静默时间:
-                    </span>
-                    <Select defaultValue="1" style={{ width: 100,marginLeft:'10px' }} >
-                        <Option value="1">1ms</Option>
-                        <Option value="2">2ms</Option>
-                    </Select>
-                </div>
               </div>
               {/* <EditableTable originData={this.state.originData} /> */}
               <RtuTable originData={this.state.originData} 
                         handleDelete={this.handleDelete}
                         handleAdd={this.handleAdd}
-                        handleSave={this.handleSave}/> 
-              <div style={{display:showExp ,fontSize:'18px'}}>
-                  这里是有关静默时间的解释
-              </div> 
+                        handleSave={this.handleSave}
+                        alertClick={this.alertClick}
+                        showExp={this.state.showExp}/> 
           </div>
       )
   }  

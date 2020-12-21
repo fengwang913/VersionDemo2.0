@@ -1,24 +1,24 @@
 import React,{ useEffect, useState }  from 'react';
 import { Switch , Button  } from 'antd';
-import { Select } from 'antd';
+// import { Select } from 'antd';
 
-const { Option } = Select;
+// const { Option } = Select;
 
-function onChange(value) {
-  console.log(`selected ${value}`);
-}
+// function onChange(value) {
+//   console.log(`selected ${value}`);
+// }
 
-function onBlur() {
-  console.log('blur');
-}
+// function onBlur() {
+//   console.log('blur');
+// }
 
-function onFocus() {
-  console.log('focus');
-}
+// function onFocus() {
+//   console.log('focus');
+// }
 
-function onSearch(val) {
-  console.log('search:', val);
-}
+// function onSearch(val) {
+//   console.log('search:', val);
+// }
 
 
 const DataTime =() => {
@@ -72,7 +72,7 @@ const DataTime =() => {
                 </div>
                 
             </div>
-            <div style={{fontSize:'24px',marginTop:'15px'}}>
+            {/* <div style={{fontSize:'24px',marginTop:'15px'}}>
                 语言设置
                 <div>
                     <Select
@@ -94,7 +94,7 @@ const DataTime =() => {
                     </Select>
                 </div>
                 
-            </div>
+            </div> */}
         </div>
     )
 }
