@@ -126,7 +126,7 @@ const AiTable = (props) => {
     },
     
       {
-        title: 'SOE滞回区间',
+        title: '死区 ',
         dataIndex: 'SOERange',
         width: '12%',
         editable: true,

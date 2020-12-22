@@ -1,15 +1,6 @@
 import React,{ Component }  from 'react';
 import {BrowserRouter as Router ,Route ,Switch  } from 'react-router-dom';
 
-
-
-// import MainLayout from '../base/layout'
-// import Login from '../view/login'
-
-
-
-
-
 import Home from './menu/home/home'
 import Log from './menu/log'
 import ModRTU from './menu/modrtu/modrtu'
@@ -25,8 +16,6 @@ import ProVariable from './menu/ProjectVari/project'
 import General from './menu/general/general'
 
 // import Ntp from './menu/ntp/ntp'
-
-
 
 
 export default class View extends Component{

@@ -119,7 +119,7 @@ const EditableTable = (props) => {
         editable: false,
       },
       {
-        title: 'IP',
+        title: 'Server IP',
         dataIndex: 'IP',
         width: 100,
         editable: false,
@@ -131,7 +131,7 @@ const EditableTable = (props) => {
       editable: false,
     },
     {
-        title: 'Slave ID',
+        title: '从站地址',
         dataIndex: 'slaveId',
         width: 100,
         editable: false,
@@ -144,7 +144,7 @@ const EditableTable = (props) => {
     },
     
       {
-        title: '地址',
+        title: '起始地址',
         dataIndex: 'Addre',
         width: 100,
         editable: true,
@@ -161,7 +161,7 @@ const EditableTable = (props) => {
         width: 100,
         editable: true,
       }, {
-        title: '状态地址',
+        title: '命令状态地址',
         dataIndex: 'statusAddress',
         width: 100,
         editable: true,
@@ -179,7 +179,7 @@ const EditableTable = (props) => {
         editable: true,
       },
       {
-        title: '周期',
+        title: '周期(ms)',
         dataIndex: 'circle',
         width: 80,
         editable: true,

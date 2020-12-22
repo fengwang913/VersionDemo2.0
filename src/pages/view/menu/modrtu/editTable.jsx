@@ -132,20 +132,20 @@ class RtuTable extends React.Component {
             editable: false,
           },
           {
-            title: '从站地址',
+            title: '从站ID',
             dataIndex: 'slaveId',
-            width: '10%',
+            width: '8%',
             editable: true,
           },
           {
             title: '功能码',
             dataIndex: 'funcCode',
-            width: '19%',
+            width: '15%',
             editable: true,
           },
           
             {
-              title: '地址',
+              title: '起始地址',
               dataIndex: 'Addre',
               width: '10%',
               editable: true,
@@ -157,28 +157,28 @@ class RtuTable extends React.Component {
               editable: true,
             },
             {
-              title: '状态地址',
+              title: '命令状态地址',
               dataIndex: 'statusAddre',
-              width: '10%',
+              width: '12%',
               editable: true,
             },
       
             {
               title: '数量',
               dataIndex: 'number',
-              width: '9%',
+              width: '6%',
               editable: true,
             }, 
             {
-                title: '响应超时',
+                title: '响应超时(ms)',
                 dataIndex: 'timeout',
-                width: '7%',
+                width: '13%',
                 editable: true,
               },
             {
-              title: '周期',
+              title: '周期(ms)',
               dataIndex: 'circle',
-              width: '7%',
+              width: '11%',
               editable: true,
             },
 
@@ -279,13 +279,12 @@ class RtuTable extends React.Component {
             <span  
               onClick={this.props.alertClick}
               style={{marginLeft :'10px',cursor:'pointer'}}>
-                静默时间:
+                静默时间(ms):
               </span>
               <Select defaultValue="1" style={{ width: 100,marginLeft:'10px' }} >
                   <Option value="1">1ms</Option>
                   <Option value="2">2ms</Option>
               </Select>
-  
               <Button
                   onClick={this.handleAdd}
                   type="primary"

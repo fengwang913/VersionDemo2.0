@@ -16,11 +16,7 @@ export default class Draft extends Component{
             <div>
                 <div>
                     <Space style={{marginLeft:'10px',marginTop:'5px'}}>
-                        <Button onClick ={this.props.uploadList} >上传</Button>
-                        {/* <Button onClick ={this.props.changeList} >AI</Button>
-                        <Button onClick ={this.props.changeList} >AO</Button>
-                        <Button danger onClick ={this.props.changeList}>移除最后一项</Button>
-                        <Button danger onClick ={this.props.changeList}>清空</Button> */}
+                        <Button onClick ={this.props.uploadList} >刷新</Button>
                     </Space>
                 </div>
                 <div style={{Display:'flex'}}>

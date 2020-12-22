@@ -1,11 +1,10 @@
 import React,{ Component }  from 'react';
 import RtuTable from './editTable';
 
-
 export default class Port05 extends Component{
     constructor(props){
         super(props)
-
+        
         this.state = {
             originData:[{
                 key:'01',

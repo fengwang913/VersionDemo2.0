@@ -95,7 +95,7 @@ export default class Item extends Component{
                   语言
               </Menu.Item>
               <Menu.Item key='reset'>
-                  重置
+                  恢复出厂设置
               </Menu.Item>
             </Menu>
           );
