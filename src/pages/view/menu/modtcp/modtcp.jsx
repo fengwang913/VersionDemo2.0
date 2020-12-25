@@ -15,12 +15,12 @@ export default class ModTCP extends Component{
                 <div style={{fontSize:'20px'}} >
                    ModTCP-Client
                    <div style={{fontSize:'16px',margin:'10px',float:'right'}}>
-                   连接超时:
+                   连接超时(ms):
                     <Select defaultValue="33" style={{ width: 100,marginLeft:'10px',marginRight:'10px' }} >
-                        <Option value="33">33ms</Option>
-                        <Option value="23">23ms</Option>
-                        <Option value="13">13ms</Option>
-                        <Option value="43">43ms</Option>
+                        <Option value="33">33</Option>
+                        <Option value="23">23</Option>
+                        <Option value="13">13</Option>
+                        <Option value="43">43</Option>
                     </Select>
                     {/* 响应超时:
                     <Select defaultValue="33" style={{ width: 100,marginLeft:'10px' }} >

@@ -279,12 +279,11 @@ class RtuTable extends React.Component {
             <span  
               onClick={this.props.alertClick}
               style={{marginLeft :'10px',cursor:'pointer'}}>
-                静默时间(ms):
+                静默时间(ms): 
+                
               </span>
-              <Select defaultValue="1" style={{ width: 100,marginLeft:'10px' }} >
-                  <Option value="1">1ms</Option>
-                  <Option value="2">2ms</Option>
-              </Select>
+              <Input  placeholder="0" bordered={false} style={{width:'70px'}}  />
+              
               <Button
                   onClick={this.handleAdd}
                   type="primary"

@@ -19,7 +19,7 @@ export default class Header extends Component{
         return(
             <div style={{display:'flex',height:'8vh', Width:'100vw'}}>
                 <div style={ {
-                            width :'250px',
+                            width :'17vw',
                             fontSize:'25px',       
                         } }>
                             <div style={{display:'flex', width :'250px',}}>
@@ -40,7 +40,7 @@ export default class Header extends Component{
                         
                 </div>
                 <div style={ {
-                        width:'80.5vw',
+                        width:'83vw',
                         backgroundColor:'#043D5D',
                     } }>
                         <div style={{paddingLeft:'14px',

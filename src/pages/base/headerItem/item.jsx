@@ -86,7 +86,7 @@ export default class Item extends Component{
         const menu = (
             <Menu onClick={this.handleMenuClick}>
               <Menu.Item key='logout'>
-                  Logout
+                  登出
               </Menu.Item>
               <Menu.Item key='access'>
                   修改密码

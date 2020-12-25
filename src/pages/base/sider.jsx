@@ -26,7 +26,7 @@ const Demo = (props) => {
     return (
       <>
         <Menu
-          style={{ width: 250}}
+          style={{ width: '17vw'}}
           defaultSelectedKeys={["view/port"]}
           defaultOpenKeys={['sub1','sub2','sub3','sub4']}
           mode="inline"
@@ -37,7 +37,7 @@ const Demo = (props) => {
                 <div 
                     style={{height:'16px',
                             marginLeft:'6px',
-                            paddingTop:'6px',
+                            marginTop:'6px',
                             color:'#C0C0C0',
                             paddingTop:'4px',}}>Configuration</div>
                 <SubMenu  key="sub1" icon={<DesktopOutlined />} title="Communication">
@@ -55,7 +55,7 @@ const Demo = (props) => {
                 
                 <SubMenu  key="sub3" icon={<DesktopOutlined />} title="System">
                     <SubMenu  key="sub4"  title="Upgrade">
-                        <Menu.Item key="view/firmware" >Firmware upgrade</Menu.Item>
+                        <Menu.Item key="view/firmware" >Firmware</Menu.Item>
                         <Menu.Item key="view/project" >Project</Menu.Item>              
                     </SubMenu > 
 
