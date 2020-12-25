@@ -26,7 +26,7 @@ const Demo = (props) => {
     return (
       <>
         <Menu
-          style={{ width: '17vw'}}
+          style={{ width: '18vw'}}
           defaultSelectedKeys={["view/port"]}
           defaultOpenKeys={['sub1','sub2','sub3','sub4']}
           mode="inline"
