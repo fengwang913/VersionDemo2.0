@@ -22,7 +22,7 @@ export default class Header extends Component{
                             width :'18vw',
                             fontSize:'25px',       
                         } }>
-                            <div style={{display:'flex', width :'250px',}}>
+                            <div style={{display:'flex', width :'18vw',}}>
                                 <div style={{paddingLeft:'20px',
                                             marginTop:'10px'}}>
                                     {React.createElement(MenuOutlined, {
