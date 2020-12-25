@@ -167,7 +167,7 @@ const EditableTable = (props) => {
         editable: true,
       }, 
       {
-        title: '响应时间',
+        title: '响应时间(ms)',
         dataIndex: 'timeout',
         width: 100,
         editable: true,

@@ -3,6 +3,7 @@ import React  from 'react';
 import { Layout, } from 'antd';
 
 import View from '../view/view'
+import  '../../assets/css/scroll.css' 
 
 
 const {  Content } = Layout;
@@ -14,7 +15,7 @@ export default class Cont extends React.Component {
         
         <Layout className="site-layout">
           
-          <Content style={{ margin: '0px 24px',maxHeight:'90vh'  }}>
+          <Content className="innerbox" style={{ padding:'0px 24px' ,maxHeight:'90vh',overflowY:'auto'  }}>
               <View/>
           </Content>
         </Layout>

@@ -125,7 +125,7 @@ const DoTable = (props) => {
         editable: true,
       },
       {
-        title: '滤波时间',
+        title: '滤波时间(ms)',
         dataIndex:'time',
         width: '15%',
         editable: true,

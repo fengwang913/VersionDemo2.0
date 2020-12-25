@@ -13,7 +13,7 @@ export default class ModTCP extends Component{
         return(
             <div style={{ marginTop:'20px',overflowX:'auto'}}>
                 <div style={{fontSize:'20px'}} >
-                   ModTCP-Master
+                   ModTCP-Client
                    <div style={{fontSize:'16px',margin:'10px',float:'right'}}>
                    连接超时:
                     <Select defaultValue="33" style={{ width: 100,marginLeft:'10px',marginRight:'10px' }} >

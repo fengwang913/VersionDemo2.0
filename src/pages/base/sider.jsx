@@ -8,7 +8,7 @@ import {
     // ContainerOutlined,
     // MailOutlined,
     CalendarOutlined,
-    AppstoreOutlined,
+    // AppstoreOutlined,
     SettingOutlined,
     LinkOutlined,
 
@@ -24,7 +24,7 @@ const Demo = (props) => {
     return (
       <>
         <Menu
-          style={{ width: 250 }}
+          style={{ width: 250}}
           defaultSelectedKeys={["view/port"]}
           defaultOpenKeys={['sub1','sub2','sub3','sub4']}
           mode="inline"
@@ -37,7 +37,7 @@ const Demo = (props) => {
                             marginLeft:'6px',
                             paddingTop:'6px',
                             color:'#C0C0C0',
-                            marginTop:'4px',}}>Configuration</div>
+                            paddingTop:'4px',}}>Configuration</div>
                 <SubMenu  key="sub1" icon={<DesktopOutlined />} title="Communication">
                     <Menu.Item key="view/port">Device</Menu.Item>
                     <SubMenu  key="sub2"  title="Protocol">
@@ -115,6 +115,7 @@ export default class SiderMenu extends React.Component {
             collapsible 
             collapsedWidth = {0}
             collapsed={collapsed} 
+            
              >
           <div className="logo" />
           <Demo props={this.props}/>

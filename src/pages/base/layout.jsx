@@ -59,14 +59,14 @@ export default class MainLayout extends React.Component {
     return (
        <div>
            <Header toggle={this.toggle}/>
-           <Layout style={{ minHeight: '92vh' }}>
+           <Layout style={{ height: '92vh'}}>
                 <SiderMenu  collapsed={this.state.collapsed}  
                             _handleClick={this._handleClick} 
                             leftMenuHighLight={this.leftMenuHighLight}
                             onOpenChange={this.onOpenChange}
                             openKeys={this.state.openKeys}
                             />
-                <Cont  />
+                <Cont />
            </Layout>
        </div>
       

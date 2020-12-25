@@ -113,7 +113,7 @@ const AiTable = (props) => {
       editable: false,
     },
     {
-      title: '滤波时间',
+      title: '滤波时间(ms)',
       dataIndex:'time',
       width: '10%',
       editable: true,
