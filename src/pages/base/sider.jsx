@@ -15,6 +15,8 @@ import {
 } from '@ant-design/icons';
 
 import  '../../assets/css/sider.css'
+import  '../../assets/css/scroll.css'
+
 
 const {  Sider } = Layout;
 const { SubMenu } = Menu;
@@ -115,6 +117,8 @@ export default class SiderMenu extends React.Component {
             collapsible 
             collapsedWidth = {0}
             collapsed={collapsed} 
+            style={{overflowY:'auto'}}
+            className="innerbox"
             
              >
           <div className="logo" />

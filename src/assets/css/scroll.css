@@ -1,6 +1,6 @@
 .innerbox::-webkit-scrollbar {
     width: 4px;    
-    /*height: 4px;*/
+    height: 4px;
 }
 
 .innerbox::-webkit-scrollbar-thumb {
